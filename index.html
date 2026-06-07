@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="د. جرجس نبيل — خريج كلية طب الأسنان جامعة عين شمس. أخصائي تجميل الأسنان وزراعتها بمصر الجديدة. هوليود سمايل، زراعة، تقويم.">
+  <title>د. جرجس نبيل | عيادة سمايل كلينيك للأسنان - مصر الجديدة</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-logo">🦷 <span>سمايل كلينيك</span></div>
+    <div class="loader-bar"><div class="loader-fill"></div></div>
+  </div>
+
+  <!-- PARTICLES -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast">✅ تم إرسال طلب الحجز بنجاح!</div>
+
+  <!-- BACK TO TOP -->
+  <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="العودة للأعلى">↑</button>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/201068300432" class="whatsapp-float" target="_blank" aria-label="واتساب">
+    <svg viewBox="0 0 32 32" fill="currentColor" width="28" height="28"><path d="M16 0C7.164 0 0 7.163 0 16c0 2.82.736 5.47 2.025 7.773L.094 31.906l8.336-1.9A15.937 15.937 0 0016 32c8.836 0 16-7.163 16-16S24.836 0 16 0zm8.243 22.65c-.342.963-1.986 1.838-2.72 1.957-.736.12-1.64.17-2.647-.166-.61-.2-1.392-.468-2.393-.917-4.21-1.818-6.953-6.07-7.16-6.35-.207-.281-1.69-2.248-1.69-4.288 0-2.04 1.071-3.041 1.451-3.456.381-.414.83-.518 1.107-.518.277 0 .553.003.795.013.255.012.597-.097.934.713.342.826 1.162 2.82 1.264 3.025.103.207.172.449.034.725-.137.278-.207.449-.414.69-.207.242-.434.54-.622.726-.207.207-.422.43-.181.843.24.415 1.07 1.764 2.3 2.857 1.58 1.407 2.912 1.843 3.327 2.05.414.207.655.172.897-.104.24-.276 1.036-1.209 1.313-1.624.276-.415.552-.345.93-.207.38.138 2.405 1.134 2.82 1.34.415.208.69.312.795.483.103.17.103.983-.24 1.946z"/></svg>
+  </a>
+
+  <!-- MOBILE NAV -->
+  <nav class="mobile-nav" id="mobileNav">
+    <button class="mobile-close" onclick="closeMobileNav()">✕</button>
+    <a href="#hero" class="mobile-nav-link" onclick="closeMobileNav()">الرئيسية</a>
+    <a href="#about" class="mobile-nav-link" onclick="closeMobileNav()">من نحن</a>
+    <a href="#services" class="mobile-nav-link" onclick="closeMobileNav()">الخدمات</a>
+    <a href="#before-after" class="mobile-nav-link" onclick="closeMobileNav()">قبل وبعد</a>
+    <a href="#why-us" class="mobile-nav-link" onclick="closeMobileNav()">لماذا نحن؟</a>
+    <a href="#pricing" class="mobile-nav-link" onclick="closeMobileNav()">الأسعار</a>
+    <a href="#testimonials" class="mobile-nav-link" onclick="closeMobileNav()">آراء المرضى</a>
+    <a href="#faq" class="mobile-nav-link" onclick="closeMobileNav()">الأسئلة الشائعة</a>
+    <a href="#blog" class="mobile-nav-link" onclick="closeMobileNav()">المدونة</a>
+    <a href="#booking" class="mobile-nav-link" onclick="closeMobileNav()">احجز موعد</a>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="header" id="mainHeader">
+    <div class="header-inner">
+      <a href="#hero" class="logo">
+        <div class="logo-icon">🦷</div>
+        <div class="logo-text">د. <span>سامي</span></div>
+      </a>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#about" class="nav-link">من نحن</a></li>
+          <li><a href="#services" class="nav-link">الخدمات</a></li>
+          <li><a href="#before-after" class="nav-link">قبل وبعد</a></li>
+          <li><a href="#why-us" class="nav-link">لماذا نحن</a></li>
+          <li><a href="#pricing" class="nav-link">الأسعار</a></li>
+          <li><a href="#testimonials" class="nav-link">المرضى</a></li>
+          <li><a href="#faq" class="nav-link">أسئلة</a></li>
+          <li><a href="#blog" class="nav-link">المدونة</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="tel:+201068300432" class="btn-outline-white">📞 اتصل بنا</a>
+        <a href="#booking" class="btn-primary-sm">احجز موعداً</a>
+      </div>
+      <button class="hamburger" id="hamburger" onclick="openMobileNav()" aria-label="قائمة">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-bg-grid"></div>
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+
+    <div class="hero-content">
+      <!-- Text Side -->
+      <div class="hero-text-side">
+        <div class="hero-tag">
+          <div class="hero-tag-dot"></div>
+          أفضل عيادة أسنان تجميلية
+        </div>
+        <h1 class="hero-title">
+          ابتسامتك تستحق<br>
+          <span class="gradient-text">الأفضل دائماً</span>
+        </h1>
+        <p class="hero-desc">
+          د. جرجس نبيل — أخصائي طب الأسنان التجميلي والتشميل بخبرة تفوق ١٢ سنة. نحوّل ابتسامتك إلى تحفة فنية بأحدث التقنيات العالمية من قلب القاهرة.
+        </p>
+        <div class="hero-actions">
+          <a href="#booking" class="btn-hero-primary">
+            📅 احجز استشارتك مجاناً
+          </a>
+          <a href="https://wa.me/201068300432" class="btn-hero-whatsapp" target="_blank">
+            <svg viewBox="0 0 32 32" fill="currentColor" width="20" height="20"><path d="M16 0C7.164 0 0 7.163 0 16c0 2.82.736 5.47 2.025 7.773L.094 31.906l8.336-1.9A15.937 15.937 0 0016 32c8.836 0 16-7.163 16-16S24.836 0 16 0zm8.243 22.65c-.342.963-1.986 1.838-2.72 1.957-.736.12-1.64.17-2.647-.166-.61-.2-1.392-.468-2.393-.917-4.21-1.818-6.953-6.07-7.16-6.35-.207-.281-1.69-2.248-1.69-4.288 0-2.04 1.071-3.041 1.451-3.456.381-.414.83-.518 1.107-.518.277 0 .553.003.795.013.255.012.597-.097.934.713.342.826 1.162 2.82 1.264 3.025.103.207.172.449.034.725-.137.278-.207.449-.414.69-.207.242-.434.54-.622.726-.207.207-.422.43-.181.843.24.415 1.07 1.764 2.3 2.857 1.58 1.407 2.912 1.843 3.327 2.05.414.207.655.172.897-.104.24-.276 1.036-1.209 1.313-1.624.276-.415.552-.345.93-.207.38.138 2.405 1.134 2.82 1.34.415.208.69.312.795.483.103.17.103.983-.24 1.946z"/></svg>
+            واتساب
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-number" data-count="5000"><span>0</span>+</div>
+            <div class="stat-label">حالة ناجحة</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-number" data-count="10"><span>0</span>+</div>
+            <div class="stat-label">سنة خبرة</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-number" data-count="98"><span>0</span>%</div>
+            <div class="stat-label">رضا المرضى</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual Side -->
+      <div class="hero-visual">
+        <div class="hero-img-wrapper">
+          <img src="about-banner.png" alt="الدكتور محمد سامي - طبيب الأسنان" class="hero-main-img" onerror="this.src='https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?w=600&q=80'; this.onerror=null;">
+          <div class="hero-badge">
+            <div class="badge-icon">⭐</div>
+            <div>
+              <div class="badge-label">تقييم المرضى</div>
+              <div class="badge-value">4.9 / 5.0</div>
+            </div>
+          </div>
+          <div class="hero-floating-card">
+            <div class="floating-avatar">✓</div>
+            <div class="floating-text">
+              <strong>هوليود سمايل</strong>
+              <span>تحويل في يومين</span>
+              <div class="floating-stars">
+                <i>★</i><i>★</i><i>★</i><i>★</i><i>★</i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-dot"></div>
+      <span class="scroll-text">اكتشف المزيد</span>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-section reveal-right">
+          <img src="service-banner.png" alt="د. جرجس نبيل" class="about-img-main" onerror="this.src='https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=500&q=80'; this.onerror=null;">
+          <div class="about-exp-badge">
+            <div class="exp-number" data-count="10">0</div>
+            <div class="exp-text">سنوات من التميز</div>
+          </div>
+          <div class="about-img-accent">
+            <img src="cta-banner.png" alt="العيادة" onerror="this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=300&q=80'; this.onerror=null;">
+          </div>
+        </div>
+        <div class="about-content reveal-left">
+          <div class="section-tag">من نحن</div>
+          <h2 class="about-name">د. جرجس نبيل</h2>
+          <p class="about-title-role">🏆 أخصائي طب الأسنان التجميلي والتشميل — عضو نقابة أطباء مصر</p>
+          <p class="about-desc">
+            حاصل على بكالوريوس طب وجراحة الأسنان من كلية طب الأسنان — جامعة عين شمس، ودبلوم تجميل الأسنان التطبيقي من الكلية ذاتها، مع دورات دولية في ألمانيا وإيطاليا. أؤمن بأن كل ابتسامة فريدة وتستحق رعاية استثنائية.
+          </p>
+          <div class="creds-list">
+            <div class="cred-item">
+              <span class="cred-icon">🎓</span>
+              <div class="cred-text">
+                <strong>بكالوريوس طب وجراحة الأسنان — جامعة عين شمس</strong>
+                <span>كلية طب الأسنان — القاهرة، ٢٠١٢</span>
+              </div>
+            </div>
+            <div class="cred-item">
+              <span class="cred-icon">🏅</span>
+              <div class="cred-text">
+                <strong>دبلوم تجميل الأسنان التطبيقي — جامعة عين شمس</strong>
+                <span>كلية طب الأسنان، القاهرة — ٢٠١٥</span>
+              </div>
+            </div>
+            <div class="cred-item">
+              <span class="cred-icon">🌍</span>
+              <div class="cred-text">
+                <strong>دورة زراعة الأسنان — مركز ITI الدولي، هامبورغ</strong>
+                <span>ألمانيا — ٢٠١٩ | عضو نقابة أطباء أسنان مصر</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-timeline">
+            <h3 class="timeline-title">المسيرة المهنية</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-year">٢٠١٢</div>
+                <div class="timeline-event">تخرج بامتياز — كلية طب الأسنان، جامعة عين شمس</div>
+                <div class="timeline-place">القاهرة، مصر</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-year">٢٠١٩</div>
+                <div class="timeline-event">دورة تخصصية في زراعة الأسنان</div>
+                <div class="timeline-place">مركز ITI الدولي — هامبورغ، ألمانيا</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-year">٢٠٢٠</div>
+                <div class="timeline-event">افتتاح عيادة سمايل كلينيك بمصر الجديدة</div>
+                <div class="timeline-place">شارع عباس العقاد، مصر الجديدة، القاهرة</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-year">٢٠٢٤</div>
+                <div class="timeline-event">أكثر من ٦٠٠٠ حالة ناجحة وتقييم ٤.٩ على Google</div>
+                <div class="timeline-place">عيادة سمايل كلينيك — مصر الجديدة</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">خدماتنا</div>
+        <h2 class="section-title">كل ما تحتاجه <span class="text-primary">لابتسامة مثالية</span></h2>
+        <p class="section-desc">نقدم مجموعة شاملة من خدمات طب الأسنان التجميلية والعلاجية بأحدث الأجهزة والتقنيات العالمية</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal" style="transition-delay:0.0s">
+          <div class="service-icon-wrap">🦷</div>
+          <h3 class="service-name">زراعة الأسنان</h3>
+          <p class="service-desc">حلول دائمة تدوم مدى الحياة بزراعة الأسنان الفورية والتقليدية من أفضل الماركات العالمية</p>
+          <div class="service-arrow"></div>
+        </div>
+        <div class="service-card reveal" style="transition-delay:0.1s">
+          <div class="service-icon-wrap">✨</div>
+          <h3 class="service-name">هوليود سمايل</h3>
+          <p class="service-desc">ابتسامة نجوم هوليود في يومين فقط، باستخدام قشرة البورسلين عالية الجودة والتصميم الرقمي للابتسامة</p>
+          <div class="service-arrow"></div>
+        </div>
+        <div class="service-card reveal" style="transition-delay:0.2s">
+          <div class="service-icon-wrap">📐</div>
+          <h3 class="service-name">تقويم الأسنان</h3>
+          <p class="service-desc">تقويم شفاف وتقليدي لتصحيح التوافق وتحقيق الانتظام المثالي للأسنان بتقنية Invisalign الحديثة</p>
+          <div class="service-arrow"></div>
+        </div>
+        <div class="service-card reveal" style="transition-delay:0.1s">
+          <div class="service-icon-wrap">⬜</div>
+          <h3 class="service-name">تبييض الأسنان</h3>
+          <p class="service-desc">تبييض فوري بتقنية الليزر والضوء الأزرق للحصول على أسنان بيضاء تدوم لسنوات طويلة</p>
+          <div class="service-arrow"></div>
+        </div>
+        <div class="service-card reveal" style="transition-delay:0.2s">
+          <div class="service-icon-wrap">💎</div>
+          <h3 class="service-name">عدسات الأسنان</h3>
+          <p class="service-desc">قشور خزفية رفيعة تغطي الأسنان بشكل طبيعي للحصول على ابتسامة مثالية دون طحن مفرط</p>
+          <div class="service-arrow"></div>
+        </div>
+        <div class="service-card reveal" style="transition-delay:0.3s">
+          <div class="service-icon-wrap">🔬</div>
+          <h3 class="service-name">علاج الجذور</h3>
+          <p class="service-desc">علاج قنوات الجذور بتقنية Rotary الرقمية بدون ألم وجلسة واحدة للحفاظ على أسنانك الطبيعية</p>
+          <div class="service-arrow"></div>
+        </div>
+        <div class="service-card reveal" style="transition-delay:0.4s">
+          <div class="service-icon-wrap">😊</div>
+          <h3 class="service-name">تجميل الابتسامة</h3>
+          <p class="service-desc">تصميم رقمي للابتسامة بالذكاء الاصطناعي لتصور نتيجة علاجك قبل البدء واتخاذ قرارك بثقة</p>
+          <div class="service-arrow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card reveal">
+          <div class="stat-icon">🦷</div>
+          <div class="stat-count" data-count="5000"><span>0</span><span class="suffix">+</span></div>
+          <div class="stat-text">حالة ناجحة</div>
+        </div>
+        <div class="stat-card reveal" style="transition-delay:0.1s">
+          <div class="stat-icon">📅</div>
+          <div class="stat-count" data-count="10"><span>0</span><span class="suffix">+</span></div>
+          <div class="stat-text">سنوات خبرة</div>
+        </div>
+        <div class="stat-card reveal" style="transition-delay:0.2s">
+          <div class="stat-icon">⭐</div>
+          <div class="stat-count" data-count="98"><span>0</span><span class="suffix">%</span></div>
+          <div class="stat-text">نسبة رضا المرضى</div>
+        </div>
+        <div class="stat-card reveal" style="transition-delay:0.3s">
+          <div class="stat-icon">🏆</div>
+          <div class="stat-count" data-count="9"><span>0</span><span class="suffix">+</span></div>
+          <div class="stat-text">جائزة تميز</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEFORE / AFTER -->
+  <section class="before-after" id="before-after">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">نتائج حقيقية</div>
+        <h2 class="section-title">التحول <span class="text-primary">قبل وبعد</span></h2>
+        <p class="section-desc">نتائج حقيقية لمرضانا تتحدث بنفسها — اسحب الخط لمقارنة</p>
+      </div>
+
+      <div class="ba-filter-tabs reveal">
+        <button class="ba-tab active" data-filter="all">الكل</button>
+        <button class="ba-tab" data-filter="hollywood">هوليود سمايل</button>
+        <button class="ba-tab" data-filter="whitening">تبييض</button>
+        <button class="ba-tab" data-filter="implant">زراعة</button>
+        <button class="ba-tab" data-filter="braces">تقويم</button>
+      </div>
+
+      <!-- Main Slider -->
+      <div class="ba-slider-wrapper reveal">
+        <div class="ba-images" id="baImages">
+          <!-- AFTER: always fully visible base layer (left side / بعد) -->
+          <div class="ba-after"> 
+            <img src="img/Screenshot 2026-06-07 102654.png" alt="بعد العلاج" onerror="this.src='https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?w=800&q=80'; this.onerror=null;">
+            <div class="ba-label ba-label-after">بعد</div>
+          </div>
+          <!-- BEFORE: clipped top layer - shows only right portion (قبل) -->
+          <div class="ba-before" id="baBefore">
+            <img src="img/Screenshot 2026-06-07 102552.png" alt="قبل العلاج" onerror="this.src='https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&q=80'; this.onerror=null;">
+            <div class="ba-label ba-label-before">قبل</div>
+          </div>
+          <div class="ba-handle" id="baHandle">
+            <div class="ba-handle-circle">⇔</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grid gallery -->
+      <div class="ba-grid">
+        <div class="ba-card reveal" data-type="hollywood">
+          <div class="ba-img-wrap"><img src="img/images (2).jpg" alt="هوليود سمايل" class="ba-card-img" onerror="this.src='https://images.unsplash.com/photo-1559757175-5700dde675bc?w=400&q=80'; this.onerror=null;"></div>
+          <div class="ba-card-info">
+            <div class="ba-card-title">تحول مذهل</div>
+            <div class="ba-card-type">هوليود سمايل</div>
+          </div>
+        </div>
+        <div class="ba-card reveal" style="transition-delay:0.1s" data-type="whitening">
+          <div class="ba-img-wrap"><img src="img/download.jpg" alt="تبييض الأسنان" class="ba-card-img" onerror="this.src='https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?w=400&q=80'; this.onerror=null;"></div>
+          <div class="ba-card-info">
+            <div class="ba-card-title">بياض ناصع</div>
+            <div class="ba-card-type">تبييض بالليزر</div>
+          </div>
+        </div>
+        <div class="ba-card reveal" style="transition-delay:0.2s" data-type="implant">
+          <div class="ba-img-wrap"><img src="img/download (1).jpg" alt="زراعة الأسنان" class="ba-card-img" onerror="this.src='https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&q=80'; this.onerror=null;"></div>
+          <div class="ba-card-info">
+            <div class="ba-card-title">ابتسامة كاملة</div>
+            <div class="ba-card-type">زراعة الأسنان</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNOLOGIES -->
+  <section class="technologies" id="technologies">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag" style="color:var(--accent)">أحدث التقنيات</div>
+        <h2 class="section-title" style="color:var(--white)">تقنيات <span class="text-primary">المستقبل</span> اليوم</h2>
+        <p class="section-desc" style="color:rgba(255,255,255,0.5)">نستخدم أحدث الأجهزة والتقنيات الطبية لضمان أعلى مستوى من الجودة والدقة</p>
+      </div>
+      <div class="tech-grid">
+        <div class="tech-card reveal">
+          <div class="tech-glow"></div>
+          <div class="tech-icon">🖥️</div>
+          <h3 class="tech-name">تصميم الابتسامة الرقمي DSD</h3>
+          <p class="tech-desc">نصمم ابتسامتك رقمياً قبل البدء حتى ترى النتيجة قبل العلاج وتشارك في القرار بشكل كامل</p>
+          <span class="tech-badge">Digital Smile Design</span>
+        </div>
+        <div class="tech-card reveal" style="transition-delay:0.1s">
+          <div class="tech-glow"></div>
+          <div class="tech-icon">🔬</div>
+          <h3 class="tech-name">تصوير CBCT ثلاثي الأبعاد</h3>
+          <p class="tech-desc">تصوير مقطعي ثلاثي الأبعاد للفكين والأسنان بدقة عالية لتخطيط الزراعة والعلاجات المعقدة</p>
+          <span class="tech-badge">3D CBCT Imaging</span>
+        </div>
+        <div class="tech-card reveal" style="transition-delay:0.2s">
+          <div class="tech-glow"></div>
+          <div class="tech-icon">⚡</div>
+          <h3 class="tech-name">ليزر الأسنان المتطور</h3>
+          <p class="tech-desc">علاجات الأسنان بتقنية الليزر الفعالة لتبييض الأسنان وعلاج اللثة بدون ألم وبدقة فائقة</p>
+          <span class="tech-badge">Dental Laser</span>
+        </div>
+        <div class="tech-card reveal" style="transition-delay:0.1s">
+          <div class="tech-glow"></div>
+          <div class="tech-icon">🦷</div>
+          <h3 class="tech-name">طباعة ثلاثية الأبعاد</h3>
+          <p class="tech-desc">طباعة التيجان والقشور والقوالب مباشرة في العيادة بدقة مايكرونية وألوان طبيعية</p>
+          <span class="tech-badge">3D Dental Printing</span>
+        </div>
+        <div class="tech-card reveal" style="transition-delay:0.2s">
+          <div class="tech-glow"></div>
+          <div class="tech-icon">🤖</div>
+          <h3 class="tech-name">الذكاء الاصطناعي التشخيصي</h3>
+          <p class="tech-desc">تقنية AI متقدمة لتحليل الأشعة والتشخيص الدقيق للكشف المبكر عن مشاكل الأسنان</p>
+          <span class="tech-badge">AI Diagnostics</span>
+        </div>
+        <div class="tech-card reveal" style="transition-delay:0.3s">
+          <div class="tech-glow"></div>
+          <div class="tech-icon">📱</div>
+          <h3 class="tech-name">تقويم Invisalign الشفاف</h3>
+          <p class="tech-desc">أحدث جيل من الطوارق الشفافة المصنوعة خصيصاً لأسنانك بتقنية iTero الرقمية</p>
+          <span class="tech-badge">Invisalign</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">آراء المرضى</div>
+        <h2 class="section-title">ماذا يقول <span class="text-primary">مرضانا؟</span></h2>
+        <p class="section-desc">أكثر من 5000 مريض سعيد يشاركون تجاربهم الحقيقية</p>
+      </div>
+      <div class="testimonial-carousel reveal">
+        <div class="testimonial-viewport">
+        <div class="testimonial-track" id="testimonialTrack">
+          <div class="testimonial-card">
+            <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+            <p class="testimonial-text">"تجربة استثنائية من البداية للنهاية. الدكتور محمد محترف جداً وشرح لي كل خطوة. نتيجة هوليود سمايل فاقت توقعاتي بكثير!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">م</div>
+              <div>
+                <div class="author-name">منى السيد</div>
+                <div class="author-treatment">هوليود سمايل</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+            <p class="testimonial-text">"كنت خايف من عملية الزراعة بس مع الدكتور محمد كانت تجربة مريحة جداً. ما حسيت بأي ألم وكانت النتيجة رائعة تماماً."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">خ</div>
+              <div>
+                <div class="author-name">خالد العمري</div>
+                <div class="author-treatment">زراعة الأسنان</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+            <p class="testimonial-text">"بعد سنوات من الإحراج من ابتسامتي، قرر الدكتور محمد التقويم الشفاف لي. الآن أبتسم دايماً وأنا مبسوطة جداً بالنتيجة."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">ر</div>
+              <div>
+                <div class="author-name">رنا الحسن</div>
+                <div class="author-treatment">تقويم Invisalign</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+            <p class="testimonial-text">"تبييض الأسنان بالليزر كان أفضل قرار اتخذته. الجلسة ما أخذت ساعة وكانت النتيجة مذهلة. أنصح كل شخص بزيارة عيادة الدكتور."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">ع</div>
+              <div>
+                <div class="author-name">عمر قاسم</div>
+                <div class="author-treatment">تبييض بالليزر</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+            <p class="testimonial-text">"أفضل عيادة أسنان جربتها في حياتي. الاستقبال الراقي والتعامل المحترم والنتائج المبهرة. شكراً دكتور محمد على ابتسامتي الجديدة!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">ن</div>
+              <div>
+                <div class="author-name">نادية كمال</div>
+                <div class="author-treatment">عدسات الأسنان</div>
+              </div>
+            </div>
+          </div>
+        </div><!-- end track -->
+        </div><!-- end viewport -->
+        <div class="carousel-controls">         
+          <button class="carousel-btn" id="nextBtn" aria-label="التالي">‹</button>
+          <div class="carousel-dots">
+            <div class="dot active" data-idx="0"></div>
+            <div class="dot" data-idx="1"></div>
+            <div class="dot" data-idx="2"></div>
+            <div class="dot" data-idx="3"></div>
+            <div class="dot" data-idx="4"></div>
+          </div>
+          <button class="carousel-btn" id="prevBtn" aria-label="السابق">›</button>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="booking" id="booking">
+    <div class="container">
+      <div class="booking-grid">
+        <div class="booking-info reveal-right">
+          <div class="section-tag" style="color:var(--accent)">احجز الآن</div>
+          <h2 class="section-title" style="color:var(--white)">ابدأ رحلتك نحو <span class="text-primary">ابتسامة مثالية</span></h2>
+          <p class="section-desc" style="color:rgba(255,255,255,0.6);text-align:right;margin:0">احجز استشارتك المجانية الآن وخذ الخطوة الأولى نحو الابتسامة التي دائماً حلمت بها.</p>
+          <div class="booking-features">
+            <div class="booking-feature">
+              <div class="bf-icon">🔍</div>
+              <div class="bf-text">
+                <strong>استشارة مجانية</strong>
+                <span>تشخيص شامل ومجاني بدون أي التزام</span>
+              </div>
+            </div>
+            <div class="booking-feature">
+              <div class="bf-icon">⏱️</div>
+              <div class="bf-text">
+                <strong>تأكيد فوري</strong>
+                <span>تأكيد الحجز خلال دقائق عبر واتساب</span>
+              </div>
+            </div>
+            <div class="booking-feature">
+              <div class="bf-icon">🛡️</div>
+              <div class="bf-text">
+                <strong>ضمان النتائج</strong>
+                <span>ضمان رضا تام على جميع الخدمات التجميلية</span>
+              </div>
+            </div>
+            <div class="booking-feature">
+              <div class="bf-icon">💳</div>
+              <div class="bf-text">
+                <strong>تقسيط ميسر</strong>
+                <span>أقساط شهرية بدون فوائد على جميع الخدمات</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="booking-form-wrap reveal-left">
+          <h3 class="booking-form-title">📅 احجز موعدك الآن</h3>
+          <form id="bookingForm" onsubmit="submitBooking(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">الاسم الكامل *</label>
+                <input type="text" class="form-control" placeholder="محمد أحمد" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">رقم الهاتف *</label>
+                <input type="tel" class="form-control" placeholder="+20 1XX XXX XXXX" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">الخدمة المطلوبة</label>
+              <select class="form-control">
+                <option value="">اختر الخدمة</option>
+                <option>هوليود سمايل</option>
+                <option>زراعة الأسنان</option>
+                <option>تقويم الأسنان</option>
+                <option>تبييض الأسنان</option>
+                <option>عدسات الأسنان</option>
+                <option>علاج الجذور</option>
+                <option>استشارة عامة</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">التاريخ المفضل</label>
+                <input type="date" class="form-control">
+              </div>
+              <div class="form-group">
+                <label class="form-label">الوقت المفضل</label>
+                <select class="form-control">
+                  <option>9:00 صباحاً</option>
+                  <option>11:00 صباحاً</option>
+                  <option>1:00 ظهراً</option>
+                  <option>3:00 عصراً</option>
+                  <option>5:00 مساءً</option>
+                  <option>7:00 مساءً</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">ملاحظات إضافية</label>
+              <input type="text" class="form-control" placeholder="أي معلومات إضافية تريد إخبارنا بها...">
+            </div>
+            <button type="submit" class="btn-book">📅 تأكيد الحجز</button>
+            <a href="https://wa.me/201068300432?text=أريد حجز موعد في عيادة سمايل كلينيك - د. جرجس نبيل" target="_blank" class="btn-whatsapp-book">
+              <svg viewBox="0 0 32 32" fill="currentColor" width="18" height="18"><path d="M16 0C7.164 0 0 7.163 0 16c0 2.82.736 5.47 2.025 7.773L.094 31.906l8.336-1.9A15.937 15.937 0 0016 32c8.836 0 16-7.163 16-16S24.836 0 16 0zm8.243 22.65c-.342.963-1.986 1.838-2.72 1.957-.736.12-1.64.17-2.647-.166-.61-.2-1.392-.468-2.393-.917-4.21-1.818-6.953-6.07-7.16-6.35-.207-.281-1.69-2.248-1.69-4.288 0-2.04 1.071-3.041 1.451-3.456.381-.414.83-.518 1.107-.518.277 0 .553.003.795.013.255.012.597-.097.934.713.342.826 1.162 2.82 1.264 3.025.103.207.172.449.034.725-.137.278-.207.449-.414.69-.207.242-.434.54-.622.726-.207.207-.422.43-.181.843.24.415 1.07 1.764 2.3 2.857 1.58 1.407 2.912 1.843 3.327 2.05.414.207.655.172.897-.104.24-.276 1.036-1.209 1.313-1.624.276-.415.552-.345.93-.207.38.138 2.405 1.134 2.82 1.34.415.208.69.312.795.483.103.17.103.983-.24 1.946z"/></svg>
+              احجز عبر واتساب
+            </a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY US ===== -->
+  <section class="why-us" id="why-us">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">لماذا نحن؟</div>
+        <h2 class="section-title">ما يجعلنا <span class="text-primary">الخيار الأول</span></h2>
+        <p class="section-desc">نحن لا نعالج الأسنان فحسب — نبني ثقة وعلاقة طويلة الأمد مع كل مريض</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal" style="transition-delay:0s">
+          <div class="why-num">١</div>
+          <div class="why-icon">🏥</div>
+          <h3 class="why-title">بيئة معقمة بالكامل</h3>
+          <p class="why-desc">نلتزم بأعلى معايير التعقيم الدولية في كل أداة وكل زاوية بالعيادة لضمان سلامتك الكاملة في كل زيارة.</p>
+        </div>
+        <div class="why-card reveal" style="transition-delay:0.1s">
+          <div class="why-num">٢</div>
+          <div class="why-icon">😌</div>
+          <h3 class="why-title">علاج بدون ألم</h3>
+          <p class="why-desc">نستخدم تقنيات التخدير الحديثة والليزر لضمان تجربة لا ألم فيها — حتى أشد مرضى الرهاب يخرجون مبتسمين.</p>
+        </div>
+        <div class="why-card reveal" style="transition-delay:0.2s">
+          <div class="why-num">٣</div>
+          <div class="why-icon">💰</div>
+          <h3 class="why-title">أسعار شفافة وتقسيط</h3>
+          <p class="why-desc">لا رسوم خفية ولا مفاجآت. نقدم خطة علاج مكتوبة بالأسعار كاملةً مسبقاً مع خيارات تقسيط بدون فوائد.</p>
+        </div>
+        <div class="why-card reveal" style="transition-delay:0.3s">
+          <div class="why-num">٤</div>
+          <div class="why-icon">🕐</div>
+          <h3 class="why-title">احترام الوقت دائماً</h3>
+          <p class="why-desc">نحجز وقتاً كافياً لكل مريض ونلتزم بالمواعيد تماماً. لن تنتظر في صالة الانتظار أكثر من خمس دقائق.</p>
+        </div>
+        <div class="why-card reveal" style="transition-delay:0.4s">
+          <div class="why-num">٥</div>
+          <div class="why-icon">🔄</div>
+          <h3 class="why-title">متابعة ما بعد العلاج</h3>
+          <p class="why-desc">لا ينتهي دورنا عند انتهاء الجلسة. نتابع كل مريض بعد العلاج ونوفر استشارات مجانية عبر الواتساب.</p>
+        </div>
+        <div class="why-card reveal" style="transition-delay:0.5s">
+          <div class="why-num">٦</div>
+          <div class="why-icon">🌐</div>
+          <h3 class="why-title">تقنيات عالمية حصرية</h3>
+          <p class="why-desc">نحضر المؤتمرات الدولية ونحصل على أحدث الأجهزة قبل وصولها للسوق لنقدم لك أفضل نتيجة ممكنة.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING ===== -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">الأسعار</div>
+        <h2 class="section-title">أسعار <span class="text-primary">شفافة وواضحة</span></h2>
+        <p class="section-desc">نؤمن بالشفافية الكاملة — باقاتنا شاملة وبدون رسوم مخفية</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card reveal">
+          <div class="pricing-header">
+            <div class="pricing-icon">✨</div>
+            <h3 class="pricing-name">هوليود سمايل</h3>
+            <p class="pricing-sub">قشرة بورسلين عالية الجودة</p>
+          </div>
+          <div class="pricing-price">
+            <span class="price-from">يبدأ من</span>
+            <span class="price-val">٨٠٠</span>
+            <span class="price-cur">ج.م / سنة</span>
+          </div>
+          <ul class="pricing-features">
+            <li>✅ استشارة رقمية DSD مجانية</li>
+            <li>✅ تصميم مخصص لوجهك</li>
+            <li>✅ تركيب في جلستين فقط</li>
+            <li>✅ ضمان ٥ سنوات</li>
+            <li>✅ متابعة مجانية لسنة</li>
+          </ul>
+          <a href="#booking" class="pricing-btn">احجز استشارة مجانية</a>
+        </div>
+        <div class="pricing-card pricing-featured reveal" style="transition-delay:0.1s">
+          <div class="pricing-badge-top">الأكثر طلباً</div>
+          <div class="pricing-header">
+            <div class="pricing-icon">🦷</div>
+            <h3 class="pricing-name">زراعة الأسنان</h3>
+            <p class="pricing-sub">زراعة فورية ودائمة</p>
+          </div>
+          <div class="pricing-price">
+            <span class="price-from">يبدأ من</span>
+            <span class="price-val">٣٠٠٠</span>
+            <span class="price-cur">ج.م / سنة</span>
+          </div>
+          <ul class="pricing-features">
+            <li>✅ أشعة CBCT ثلاثية مجانية</li>
+            <li>✅ زراعة فورية في يوم واحد</li>
+            <li>✅ تاج بورسلين مجاني</li>
+            <li>✅ ضمان ١٠ سنوات</li>
+            <li>✅ تقسيط ٢٤ شهر بدون فوائد</li>
+          </ul>
+          <a href="#booking" class="pricing-btn pricing-btn-primary">احجز الآن</a>
+        </div>
+        <div class="pricing-card reveal" style="transition-delay:0.2s">
+          <div class="pricing-header">
+            <div class="pricing-icon">😬</div>
+            <h3 class="pricing-name">تقويم Invisalign</h3>
+            <p class="pricing-sub">تقويم شفاف غير مرئي</p>
+          </div>
+          <div class="pricing-price">
+            <span class="price-from">يبدأ من</span>
+            <span class="price-val">١٢٠٠</span>
+            <span class="price-cur">ج.م / شهر</span>
+          </div>
+          <ul class="pricing-features">
+            <li>✅ فحص iTero رقمي مجاني</li>
+            <li>✅ خطة علاج بالذكاء الاصطناعي</li>
+            <li>✅ طوارق شفافة مخصصة</li>
+            <li>✅ متابعة شهرية مجانية</li>
+            <li>✅ ريتينر نهاية الكورس مجاناً</li>
+          </ul>
+          <a href="#booking" class="pricing-btn">احجز استشارة مجانية</a>
+        </div>
+      </div>
+      <p class="pricing-note reveal">* الأسعار تقديرية وتختلف حسب الحالة. الاستشارة الأولى مجانية ونقدم خطة علاج بالأسعار بالتفصيل.</p>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="faq-inner">
+        <div class="faq-left reveal-right">
+          <div class="section-tag">الأسئلة الشائعة</div>
+          <h2 class="section-title" style="text-align:right">كل أسئلتك<br><span class="text-primary">لها إجابة هنا</span></h2>
+          <p style="font-size:1.6rem;color:var(--gray-500);line-height:1.8;margin-top:16px;text-align:right">لم تجد إجابتك؟ تواصل معنا مباشرة وسنرد خلال دقائق.</p>
+          <a href="https://wa.me/201068300432" class="faq-wa-btn" target="_blank">
+            <svg viewBox="0 0 32 32" fill="currentColor" width="20" height="20"><path d="M16 0C7.164 0 0 7.163 0 16c0 2.82.736 5.47 2.025 7.773L.094 31.906l8.336-1.9A15.937 15.937 0 0016 32c8.836 0 16-7.163 16-16S24.836 0 16 0zm8.243 22.65c-.342.963-1.986 1.838-2.72 1.957-.736.12-1.64.17-2.647-.166-.61-.2-1.392-.468-2.393-.917-4.21-1.818-6.953-6.07-7.16-6.35-.207-.281-1.69-2.248-1.69-4.288 0-2.04 1.071-3.041 1.451-3.456.381-.414.83-.518 1.107-.518.277 0 .553.003.795.013.255.012.597-.097.934.713.342.826 1.162 2.82 1.264 3.025.103.207.172.449.034.725-.137.278-.207.449-.414.69-.207.242-.434.54-.622.726-.207.207-.422.43-.181.843.24.415 1.07 1.764 2.3 2.857 1.58 1.407 2.912 1.843 3.327 2.05.414.207.655.172.897-.104.24-.276 1.036-1.209 1.313-1.624.276-.415.552-.345.93-.207.38.138 2.405 1.134 2.82 1.34.415.208.69.312.795.483.103.17.103.983-.24 1.946z"/></svg>
+            اسأل عبر واتساب
+          </a>
+        </div>
+        <div class="faq-right reveal-left">
+          <div class="faq-list" id="faqList">
+            <div class="faq-item active">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                <span>هل العلاجات التجميلية مؤلمة؟</span>
+                <span class="faq-arrow">+</span>
+              </button>
+              <div class="faq-a">
+                <p>لا على الإطلاق. نستخدم في عيادتنا أحدث تقنيات التخدير الموضعي جنباً إلى جنب مع الليزر الطبي الذي يجعل معظم الإجراءات خالية تماماً من الألم. كثير من مرضانا يُفاجأون بأن الجلسة انتهت قبل أن يشعروا بأي شيء.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                <span>كم تستغرق جلسة هوليود سمايل؟</span>
+                <span class="faq-arrow">+</span>
+              </button>
+              <div class="faq-a">
+                <p>عادةً تتم عملية هوليود سمايل في جلستين، تتراوح كل جلسة بين ساعتين وثلاث ساعات. الجلسة الأولى للتحضير والقياس الرقمي، والجلسة الثانية للتركيب النهائي. يمكن في بعض الحالات إتمام كل شيء خلال يومين متتاليين.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                <span>هل يمكنني رؤية نتيجتي قبل البدء؟</span>
+                <span class="faq-arrow">+</span>
+              </button>
+              <div class="faq-a">
+                <p>نعم! هذه إحدى الميزات التي نفخر بها. باستخدام تقنية تصميم الابتسامة الرقمي DSD والذكاء الاصطناعي، نصمم ابتسامتك المستقبلية على الشاشة أمامك قبل أي إجراء، ويمكنك التعديل والموافقة حتى تصل للشكل المثالي الذي تريده.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                <span>كم تدوم زراعة الأسنان؟</span>
+                <span class="faq-arrow">+</span>
+              </button>
+              <div class="faq-a">
+                <p>زراعة الأسنان هي الحل الأكثر ديمومة في طب الأسنان. مع العناية الجيدة، يمكن للزراعة أن تدوم مدى الحياة. تاج الزراعة (الجزء الظاهر) يحتاج لاستبدال كل ١٠–١٥ سنة في الغالب. نقدم ضماناً على عملياتنا يصل إلى ١٠ سنوات.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                <span>هل هناك تقسيط على خدماتكم؟</span>
+                <span class="faq-arrow">+</span>
+              </button>
+              <div class="faq-a">
+                <p>بالتأكيد. نقدم تقسيطاً مريحاً يصل إلى ٢٤ شهراً بدون فوائد على جميع الخدمات الكبرى مثل الزراعة والتقويم وهوليود سمايل. كما نتعامل مع عدة شركات تأمين صحي. تواصل معنا ونساعدك في إيجاد خطة الدفع المناسبة لك.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                <span>متى يُنصح بزراعة الأسنان بدلاً من التلبيس؟</span>
+                <span class="faq-arrow">+</span>
+              </button>
+              <div class="faq-a">
+                <p>الزراعة هي الخيار الأمثل عندما يكون السن مفقوداً بالكامل أو تالفاً بشكل لا يمكن إصلاحه. ميزتها الكبرى أنها تحافظ على عظم الفك وتمنع ضموره، ولا تؤثر على الأسنان المجاورة كما يفعل الجسر. التلبيس يكون أنسب عندما يكون هناك سن أصلي يمكن البناء عليه.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                <span>كيف أعتني بأسناني بعد هوليود سمايل؟</span>
+                <span class="faq-arrow">+</span>
+              </button>
+              <div class="faq-a">
+                <p>العناية بسيطة جداً: تفريش منتظم مرتين يومياً بفرشاة ناعمة، خيط تنظيف يومي، وتجنب الأطعمة الصلبة جداً في الأشهر الأولى. الابتعاد عن التدخين والمشروبات الملونة المفرطة يطيل عمر القشور. وفي كل الأحوال، سنرسل لك دليلاً تفصيلياً بعد التركيب مباشرة.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BLOG ===== -->
+  <section class="blog" id="blog">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">المدونة الطبية</div>
+        <h2 class="section-title">نصائح لـ<span class="text-primary">صحة أسنانك</span></h2>
+        <p class="section-desc">أحدث المقالات والنصائح من خبراء طب الأسنان لحياة أكثر صحة وابتسامة أجمل</p>
+      </div>
+      <div class="blog-grid">
+        <div class="blog-card reveal" onclick="openArticle('article1')">
+          <div class="blog-img-wrap">
+            <img src="img/download (2).jpg" alt="هوليود سمايل" class="blog-img" onerror="this.src='https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?w=600&q=80'; this.onerror=null;">
+          </div>
+          <div class="blog-body">
+            <span class="blog-cat">هوليود سمايل</span>
+            <h3 class="blog-title">كل ما تريد معرفته عن هوليود سمايل قبل اتخاذ القرار</h3>
+            <p class="blog-desc">دليل شامل لعملية هوليود سمايل من التخطيط حتى النتيجة النهائية مع نصائح للعناية باللثة والأسنان...</p>
+            <div class="blog-footer">
+              <span class="blog-date">١٥ مايو ٢٠٢٥</span>
+              <button class="blog-read" onclick="openArticle('article1')">اقرأ المزيد <span>←</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="blog-card reveal" style="transition-delay:0.1s" onclick="openArticle('article2')">
+          <div class="blog-img-wrap">
+            <img src="blog-post-2.webp" alt="زراعة الأسنان" class="blog-img" onerror="this.src='https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&q=80'; this.onerror=null;">
+          </div>
+          <div class="blog-body">
+            <span class="blog-cat">زراعة الأسنان</span>
+            <h3 class="blog-title">الدليل الكامل لزراعة الأسنان: فوائدها وأنواعها ومدة صلاحيتها</h3>
+            <p class="blog-desc">تعرف على كل شيء عن زراعة الأسنان الحديثة وكيف تختار بين الزراعة الفورية والتقليدية...</p>
+            <div class="blog-footer">
+              <span class="blog-date">٢ أبريل ٢٠٢٥</span>
+              <button class="blog-read" onclick="openArticle('article2')">اقرأ المزيد <span>←</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="blog-card reveal" style="transition-delay:0.2s" onclick="openArticle('article3')">
+          <div class="blog-img-wrap">
+            <img src="img/images.jpg" alt="العناية بالأسنان" class="blog-img" onerror="this.src='https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&q=80'; this.onerror=null;">
+          </div>
+          <div class="blog-body">
+            <span class="blog-cat">نصائح طبية</span>
+            <h3 class="blog-title">١٠ عادات يومية تحافظ على أسنانك وتمنع تسوسها للأبد</h3>
+            <p class="blog-desc">نصائح عملية وسهلة التطبيق من خبراء طب الأسنان للحفاظ على صحة فمك وأسنانك على المدى الطويل...</p>
+            <div class="blog-footer">
+              <span class="blog-date">١٨ مارس ٢٠٢٥</span>
+              <button class="blog-read" onclick="openArticle('article3')">اقرأ المزيد <span>←</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="blog-card reveal" style="transition-delay:0.0s" onclick="openArticle('article4')">
+          <div class="blog-img-wrap">
+            <img src="img/image5-3-1.jpg.webp" alt="تبييض الأسنان" class="blog-img" onerror="this.src='https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?w=600&q=80'; this.onerror=null;">
+          </div>
+          <div class="blog-body">
+            <span class="blog-cat">تبييض الأسنان</span>
+            <h3 class="blog-title">تبييض الأسنان بالليزر مقابل التبييض المنزلي: أيهما أفضل؟</h3>
+            <p class="blog-desc">مقارنة شاملة وعلمية بين طرق التبييض المختلفة، نتائجها، مدتها، وسلامتها على المينا...</p>
+            <div class="blog-footer">
+              <span class="blog-date">٥ مارس ٢٠٢٥</span>
+              <button class="blog-read" onclick="openArticle('article4')">اقرأ المزيد <span>←</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="blog-card reveal" style="transition-delay:0.1s" onclick="openArticle('article5')">
+          <div class="blog-img-wrap">
+            <img src="img/2-2-1300x676.webp" alt="أسنان الأطفال" class="blog-img" onerror="this.src='https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&q=80'; this.onerror=null;">
+          </div>
+          <div class="blog-body">
+            <span class="blog-cat">صحة الأطفال</span>
+            <h3 class="blog-title">متى يبدأ طفلك بزيارة طبيب الأسنان؟ دليل الآباء الكامل</h3>
+            <p class="blog-desc">كل ما يحتاجه الوالدان لحماية أسنان أطفالهم من أول سن حتى المراهقة، مع نصائح الوقاية...</p>
+            <div class="blog-footer">
+              <span class="blog-date">١٢ فبراير ٢٠٢٥</span>
+              <button class="blog-read" onclick="openArticle('article5')">اقرأ المزيد <span>←</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="blog-card reveal" style="transition-delay:0.2s" onclick="openArticle('article6')">
+          <div class="blog-img-wrap">
+            <img src="img/images (1).jpg" alt="ألم الأسنان" class="blog-img" onerror="this.src='https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&q=80'; this.onerror=null;">
+          </div>
+          <div class="blog-body">
+            <span class="blog-cat">علاج الألم</span>
+            <h3 class="blog-title">ألم الأسنان المفاجئ: أسبابه وكيف تتعامل معه فوراً</h3>
+            <p class="blog-desc">دليل إسعافات أولية لألم الأسنان الحاد، متى تتصل بالطبيب فوراً، وما يجب تجنبه تماماً...</p>
+            <div class="blog-footer">
+              <span class="blog-date">٢٨ يناير ٢٠٢٥</span>
+              <button class="blog-read" onclick="openArticle('article6')">اقرأ المزيد <span>←</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ARTICLE MODAL ===== -->
+  <div class="article-modal" id="articleModal" onclick="closeArticleIfOutside(event)">
+    <div class="article-modal-box">
+      <button class="article-modal-close" onclick="closeArticle()">✕</button>
+      <div class="article-modal-content" id="articleContent"></div>
+      <div class="article-modal-cta">
+        <a href="#booking" class="btn-hero-primary" onclick="closeArticle()" style="display:inline-flex;font-size:1.5rem;padding:14px 28px">📅 احجز استشارة مجانية</a>
+        <a href="https://wa.me/201068300432" class="btn-hero-whatsapp" target="_blank" style="display:inline-flex;font-size:1.5rem;padding:14px 28px;background:rgba(37,211,102,0.1);border:1.5px solid rgba(37,211,102,0.4);color:#25d366;border-radius:999px">💬 واتساب</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MAP SECTION ===== -->
+  <section class="map-section" id="map">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">موقعنا</div>
+        <h2 class="section-title">نحن في <span class="text-primary">مصر الجديدة</span></h2>
+        <p class="section-desc">شارع عباس العقاد — بجوار مول العرب، بالقرب من محطة مترو هليوبوليس</p>
+      </div>
+      <div class="map-grid reveal">
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3451.4865!2d31.3408!3d30.0954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b2b39a7%3A0x44e280c0e29b50b6!2z2YXYtdixINin2YTYrNivJiDZhdaaINin2YTYrNiv!5e0!3m2!1sar!2seg!4v1700000000000"
+            width="100%" height="400" style="border:0;border-radius:var(--radius-xl);"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="موقع عيادة سمايل كلينيك - مصر الجديدة">
+          </iframe>
+        </div>
+        <div class="map-info">
+          <div class="map-info-card">
+            <div class="mic-header">
+              <div class="mic-icon">📍</div>
+              <div>
+                <div class="mic-title">عنوان العيادة</div>
+                <div class="mic-val">١٥ شارع عباس العقاد، برج النور، الدور الثالث، مصر الجديدة، القاهرة</div>
+              </div>
+            </div>
+          </div>
+          <div class="map-info-card">
+            <div class="mic-header">
+              <div class="mic-icon">⏰</div>
+              <div>
+                <div class="mic-title">مواعيد العمل</div>
+                <div class="mic-val">السبت – الخميس: ١٢ ظهراً – ٩ مساءً</div>
+                <div class="mic-val" style="color:var(--gray-400);font-size:1.4rem">الجمعة: إجازة أسبوعية</div>
+              </div>
+            </div>
+          </div>
+          <div class="map-info-card">
+            <div class="mic-header">
+              <div class="mic-icon">🚇</div>
+              <div>
+                <div class="mic-title">وسائل الوصول</div>
+                <div class="mic-val">مترو: محطة النزهة (خط ٣) — ٥ دقائق سيراً</div>
+                <div class="mic-val" style="color:var(--gray-400);font-size:1.4rem">توافر باركينج مجاني أمام المبنى</div>
+              </div>
+            </div>
+          </div>
+          <div class="map-info-card">
+            <div class="mic-header">
+              <div class="mic-icon">📞</div>
+              <div>
+                <div class="mic-title">للحجز والاستفسار</div>
+                <div class="mic-val"><a href="tel:+201068300432" style="color:var(--primary)">+20 10 68300432</a></div>
+                <div class="mic-val"><a href="https://wa.me/201068300432" style="color:#25d366" target="_blank">واتساب: +20 10 68300432</a></div>
+              </div>
+            </div>
+          </div>
+          <a href="https://maps.google.com/?q=مصر+الجديدة+القاهرة" target="_blank" class="map-directions-btn">
+            🗺️ احصل على الاتجاهات
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Brand -->
+          <div>
+            <div class="footer-logo-wrap">
+              <a href="#hero" class="logo" style="color:white;">
+                <div class="logo-icon">🦷</div>
+                <div class="logo-text" style="font-size:2.2rem">د. <span>سامي</span></div>
+              </a>
+            </div>
+            <p class="footer-desc">عيادة سمايل كلينيك — متخصصة في طب وتجميل الأسنان بمصر الجديدة. هدفنا ابتسامتك الجميلة بأعلى المعايير الطبية.</p>
+            <div class="footer-schedule">
+              <div class="schedule-icon">⏰</div>
+              <div class="schedule-text">
+                السبت - الخميس: ١٢ظ – ٩م<br>
+                الجمعة: مغلق — الأحد: ١٢ظ – ٩م
+              </div>
+            </div>
+          </div>
+          <!-- Links -->
+          <div>
+            <h4 class="footer-heading">روابط سريعة</h4>
+            <ul class="footer-links">
+              <li><a href="#hero" class="footer-link"><span class="footer-link-arrow">→</span> الرئيسية</a></li>
+              <li><a href="#about" class="footer-link"><span class="footer-link-arrow">→</span> من نحن</a></li>
+              <li><a href="#services" class="footer-link"><span class="footer-link-arrow">→</span> خدماتنا</a></li>
+              <li><a href="#why-us" class="footer-link"><span class="footer-link-arrow">→</span> لماذا نحن</a></li>
+              <li><a href="#pricing" class="footer-link"><span class="footer-link-arrow">→</span> الأسعار</a></li>
+              <li><a href="#faq" class="footer-link"><span class="footer-link-arrow">→</span> الأسئلة الشائعة</a></li>
+              <li><a href="#blog" class="footer-link"><span class="footer-link-arrow">→</span> المدونة</a></li>
+              <li><a href="#booking" class="footer-link"><span class="footer-link-arrow">→</span> احجز موعد</a></li>
+            </ul>
+          </div>
+          <!-- Services -->
+          <div>
+            <h4 class="footer-heading">خدماتنا</h4>
+            <ul class="footer-links">
+              <li><a href="#services" class="footer-link"><span class="footer-link-arrow">→</span> زراعة الأسنان</a></li>
+              <li><a href="#services" class="footer-link"><span class="footer-link-arrow">→</span> هوليود سمايل</a></li>
+              <li><a href="#services" class="footer-link"><span class="footer-link-arrow">→</span> تقويم الأسنان</a></li>
+              <li><a href="#services" class="footer-link"><span class="footer-link-arrow">→</span> تبييض الأسنان</a></li>
+              <li><a href="#services" class="footer-link"><span class="footer-link-arrow">→</span> عدسات الأسنان</a></li>
+              <li><a href="#services" class="footer-link"><span class="footer-link-arrow">→</span> علاج الجذور</a></li>
+            </ul>
+          </div>
+          <!-- Contact -->
+          <div>
+            <h4 class="footer-heading">تواصل معنا</h4>
+            <div class="footer-contact-items">
+              <div class="footer-contact-item">
+                <div class="fci-icon">📍</div>
+                <div class="fci-text">
+                  <strong>العنوان</strong>
+                  <span>شارع عباس العقاد، مصر الجديدة، القاهرة</span>
+                </div>
+              </div>
+              <div class="footer-contact-item">
+                <div class="fci-icon">📞</div>
+                <div class="fci-text">
+                  <strong>الهاتف</strong>
+                  <a href="tel:+201068300432">+20 10 68300432</a>
+                </div>
+              </div>
+              <div class="footer-contact-item">
+                <div class="fci-icon">✉️</div>
+                <div class="fci-text">
+                  <strong>البريد الإلكتروني</strong>
+                  <a href="mailto:info@smileclinic-eg.com">info@smileclinic-eg.com</a>
+                </div>
+              </div>
+              <div class="footer-contact-item">
+                <div class="fci-icon">💬</div>
+                <div class="fci-text">
+                  <strong>واتساب</strong>
+                  <a href="https://wa.me/201068300432">+20 10 68300432</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p class="footer-copy">© ٢٠٢٥ عيادة سمايل كلينيك — د. جرجس نبيل للأسنان. جميع الحقوق محفوظة.</p>
+      <div class="footer-social">
+        <a href="#" class="social-btn" aria-label="فيسبوك">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="#" class="social-btn" aria-label="إنستغرام">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="#" class="social-btn" aria-label="يوتيوب">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+        </a>
+        <a href="#" class="social-btn" aria-label="تيك توك">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+ <script src="script.js"></script>
+</body>
+</html>
