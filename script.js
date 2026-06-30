@@ -486,3 +486,59 @@
       glow2.style.transform = `translate(${-xP * 0.6}px, ${-yP * 0.6}px) scale(1)`;
     });
   
+
+
+  const Lightbox = (() => {
+    let currentIdx = 0;
+    let images = [];
+
+    function open(idx) {
+      const lightbox = $('#lightbox');
+      const img = $('#lightboxImg');
+      if (!lightbox || !img || !images.length) return;
+      currentIdx = idx;
+      img.src = images[currentIdx];
+      img.alt = `صورة ${currentIdx + 1}`;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function close() {
+      const lightbox = $('#lightbox');
+      if (!lightbox) return;
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function next() {
+      if (!images.length) return;
+      currentIdx = (currentIdx + 1) % images.length;
+      $('#lightboxImg').src = images[currentIdx];
+    }
+    function prev() {
+      if (!images.length) return;
+      currentIdx = (currentIdx - 1 + images.length) % images.length;
+      $('#lightboxImg').src = images[currentIdx];
+    }
+    function init() {
+      const items = $$('.gallery-item');
+      if (!items.length) return;
+      images = items.map(item => item.querySelector('img')?.src).filter(Boolean);
+
+      items.forEach((item, idx) => {
+        item.addEventListener('click', () => open(idx));
+      });
+
+      $('#lightboxClose')?.addEventListener('click', close);
+      $('#lightboxNext')?.addEventListener('click', next);
+      $('#lightboxPrev')?.addEventListener('click', prev);
+      $('#lightbox')?.addEventListener('click', e => {
+        if (e.target.id === 'lightbox') close();
+      });
+      document.addEventListener('keydown', e => {
+        if (!$('#lightbox')?.classList.contains('open')) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowLeft') next();
+        if (e.key === 'ArrowRight') prev();
+      });
+    }
+    return { init };
+  })();
