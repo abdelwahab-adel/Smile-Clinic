@@ -661,7 +661,7 @@ ol { list-style: none; }
 
 .hero__portrait {
   position: relative;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 7 / 5;
   border-radius: var(--r-2xl);
   overflow: hidden;
   background: var(--c-ink-100);
@@ -812,7 +812,7 @@ ol { list-style: none; }
 }
 
 .doctor__photo {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 6 / 5;
   border-radius: var(--r-2xl);
   overflow: hidden;
   background: var(--c-ink-100);
