@@ -311,7 +311,7 @@
 .hero__stats {
   margin-top: 2.5rem;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   border-block-start: 1px solid var(--color-border);
   padding-top: 2rem;
