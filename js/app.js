@@ -701,6 +701,21 @@ function initBookingForm() {
   const ICON_DEFAULT = "#icon-calendar-check";
   const ICON_LOADING = "#icon-loader-2";
 
+  // العيادة لا تملك سيرفر خلفي (backend) يستقبل الحجوزات، فبدل ما نتظاهر
+  // بالإرسال وتضيع بيانات المريض فعلياً، بنجهّز رسالة واتساب جاهزة بكل
+  // تفاصيل الحجز ونفتحها على نفس رقم واتساب العيادة المستخدم في باقي
+  // الموقع، والمريض يضغط "إرسال" في واتساب عشان يوصل فعلاً للعيادة.
+  const CLINIC_WHATSAPP_NUMBER = "201068300432";
+
+  const buildWhatsAppMessage = ({ name, phone, service, time, date, notes }) => {
+    const lines = ["مرحباً، أرغب في حجز موعد في سمايل كلينيك:", `الاسم: ${name}`, `رقم الهاتف: ${phone}`];
+    if (service) lines.push(`الخدمة المطلوبة: ${service}`);
+    if (date) lines.push(`التاريخ المفضل: ${date}`);
+    if (time) lines.push(`الوقت المفضل: ${time}`);
+    if (notes) lines.push(`ملاحظات: ${notes}`);
+    return lines.join("\n");
+  };
+
   const toggleFieldError = (field, errorEl, message) => {
     if (!field || !errorEl) return;
     if (message) {
@@ -728,6 +743,9 @@ function initBookingForm() {
     const name = String(data.get("name") || "").trim();
     const phone = String(data.get("phone") || "").trim();
     const date = String(data.get("date") || "").trim();
+    const service = String(data.get("service") || "").trim();
+    const time = String(data.get("time") || "").trim();
+    const notes = String(data.get("notes") || "").trim();
 
     const errors = {};
     if (name.length < 3) errors.name = "من فضلك اكتب الاسم كاملاً.";
@@ -745,6 +763,14 @@ function initBookingForm() {
     }
 
     errorNotice.hidden = true;
+
+    // لازم يتفتح فوراً (synchronously) جوه هاندلر الـ submit مباشرة، مش
+    // جوه setTimeout، عشان متاصفحات كتير (Chrome/Safari) بتمنع window.open
+    // لو حصل بعد أي تأخير وتعتبره popup غير مرغوب فيه.
+    const message = buildWhatsAppMessage({ name, phone, service, time, date, notes });
+    const whatsappUrl = `https://wa.me/${CLINIC_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+
     setLoading(true);
 
     window.setTimeout(() => {

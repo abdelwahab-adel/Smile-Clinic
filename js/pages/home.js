@@ -28,8 +28,23 @@ export function initBookingForm() {
   const todayISO = new Date().toLocaleDateString("en-CA"); // "YYYY-MM-DD", local time
   if (dateField) dateField.min = todayISO;
 
-  const ICON_DEFAULT = "assets/icons/sprite.svg#icon-calendar-check";
-  const ICON_LOADING = "assets/icons/sprite.svg#icon-loader-2";
+  const ICON_DEFAULT = "#icon-calendar-check";
+  const ICON_LOADING = "#icon-loader-2";
+
+  // العيادة لا تملك سيرفر خلفي (backend) يستقبل الحجوزات، فبدل ما نتظاهر
+  // بالإرسال وتضيع بيانات المريض فعلياً، بنجهّز رسالة واتساب جاهزة بكل
+  // تفاصيل الحجز ونفتحها على نفس رقم واتساب العيادة المستخدم في باقي
+  // الموقع، والمريض يضغط "إرسال" في واتساب عشان يوصل فعلاً للعيادة.
+  const CLINIC_WHATSAPP_NUMBER = "201068300432";
+
+  const buildWhatsAppMessage = ({ name, phone, service, time, date, notes }) => {
+    const lines = ["مرحباً، أرغب في حجز موعد في سمايل كلينيك:", `الاسم: ${name}`, `رقم الهاتف: ${phone}`];
+    if (service) lines.push(`الخدمة المطلوبة: ${service}`);
+    if (date) lines.push(`التاريخ المفضل: ${date}`);
+    if (time) lines.push(`الوقت المفضل: ${time}`);
+    if (notes) lines.push(`ملاحظات: ${notes}`);
+    return lines.join("\n");
+  };
 
   const toggleFieldError = (field, errorEl, message) => {
     if (!field || !errorEl) return;
