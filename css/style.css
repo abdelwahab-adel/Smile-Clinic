@@ -322,7 +322,8 @@ main {
   animation: spin 1s linear infinite;
 }
 
-section[id] {
+section[id],
+:target {
   scroll-margin-top: 5.5rem;
 }
 

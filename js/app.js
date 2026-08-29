@@ -2,7 +2,7 @@
  * app.js
  * Single bundled script (no ES modules) so the site runs directly from the
  * filesystem via file:// — double-click index.html and everything works,
- * no local server required. This file is components.js + data/blog-articles.js
+ * no local server required. This file is data/blog-articles.js + components.js
  * + pages/home.js + main.js concatenated, with import/export removed.
  * Icon <use> hrefs are fragment-only (#icon-x) since the sprite is inlined
  * directly in index.html rather than loaded from a separate file.
@@ -671,8 +671,9 @@ function initArticleModal() {
 /**
  * pages/home.js
  * Homepage-specific behavior: the appointment booking form.
- * Validates the required fields, shows inline errors, and simulates a
- * network submission before showing a success confirmation.
+ * Validates the required fields, shows inline errors, builds a
+ * WhatsApp message with the booking details, and opens it on the
+ * clinic's WhatsApp number before showing a success confirmation.
  */
 
 const PHONE_PATTERN = /^[0-9+\s-]{8,}$/;
@@ -765,7 +766,7 @@ function initBookingForm() {
     errorNotice.hidden = true;
 
     // لازم يتفتح فوراً (synchronously) جوه هاندلر الـ submit مباشرة، مش
-    // جوه setTimeout، عشان متاصفحات كتير (Chrome/Safari) بتمنع window.open
+    // جوه setTimeout، عشان متصفحات كتير (Chrome/Safari) بتمنع window.open
     // لو حصل بعد أي تأخير وتعتبره popup غير مرغوب فيه.
     const message = buildWhatsAppMessage({ name, phone, service, time, date, notes });
     const whatsappUrl = `https://wa.me/${CLINIC_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;

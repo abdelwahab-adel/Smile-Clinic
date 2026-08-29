@@ -1,8 +1,9 @@
 /**
  * pages/home.js
  * Homepage-specific behavior: the appointment booking form.
- * Validates the required fields, shows inline errors, and simulates a
- * network submission before showing a success confirmation.
+ * Validates the required fields, shows inline errors, builds a
+ * WhatsApp message with the booking details, and opens it on the
+ * clinic's WhatsApp number before showing a success confirmation.
  */
 
 const PHONE_PATTERN = /^[0-9+\s-]{8,}$/;
@@ -73,6 +74,9 @@ export function initBookingForm() {
     const name = String(data.get("name") || "").trim();
     const phone = String(data.get("phone") || "").trim();
     const date = String(data.get("date") || "").trim();
+    const service = String(data.get("service") || "").trim();
+    const time = String(data.get("time") || "").trim();
+    const notes = String(data.get("notes") || "").trim();
 
     const errors = {};
     if (name.length < 3) errors.name = "من فضلك اكتب الاسم كاملاً.";
@@ -90,6 +94,14 @@ export function initBookingForm() {
     }
 
     errorNotice.hidden = true;
+
+    // لازم يتفتح فوراً (synchronously) جوه هاندلر الـ submit مباشرة، مش
+    // جوه setTimeout، عشان متصفحات كتير (Chrome/Safari) بتمنع window.open
+    // لو حصل بعد أي تأخير وتعتبره popup غير مرغوب فيه.
+    const message = buildWhatsAppMessage({ name, phone, service, time, date, notes });
+    const whatsappUrl = `https://wa.me/${CLINIC_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+
     setLoading(true);
 
     window.setTimeout(() => {

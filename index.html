@@ -16,7 +16,9 @@
     content="احجز استشارتك المجانية مع د. جرجس نبيل واحصل على خطة علاج واضحة بأسعار شفافة."
   />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/photo-1612349317150-e413f6a5b16d.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="assets/images/photo-1612349317150-e413f6a5b16d.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,6 +32,39 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/components.css" />
   <link rel="stylesheet" href="css/responsive.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "سمايل كلينيك",
+    "image": "assets/images/photo-1612349317150-e413f6a5b16d.jpg",
+    "telephone": "+201068300432",
+    "email": "info@smileclinic-eg.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "شارع عباس العقاد، مصر الجديدة",
+      "addressLocality": "القاهرة",
+      "addressCountry": "EG"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+      "opens": "12:00",
+      "closes": "21:00"
+    },
+    "founder": {
+      "@type": "Physician",
+      "name": "د. جرجس نبيل",
+      "medicalSpecialty": "Dentistry",
+      "image": "assets/images/photo-1612349317150-e413f6a5b16d.jpg",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "كلية طب الأسنان — جامعة عين شمس"
+      }
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -69,7 +104,10 @@
   <header class="site-header">
     <div class="container site-header__bar">
       <a href="#home" class="site-header__brand" data-nav-link>
-        <span class="site-header__mark" aria-hidden="true"><img src="assets/images/ssss.png" alt=""></span>
+        <span class="site-header__mark" aria-hidden="true"><img src="assets/images/ssss.png" alt=""
+            width="211"
+            height="258"
+          /></span>
         <span class="site-header__brand-text">
           <span class="site-header__brand-name">سمايل كلينيك</span>
           <span class="site-header__brand-doctor">د. جرجس نبيل</span>
@@ -131,10 +169,13 @@
     <section id="home" class="hero">
       <div class="container hero__grid">
         <div class="rise">
-         
+          <span class="eyebrow">
+            <span class="eyebrow__dot" aria-hidden="true"></span>
+            د. جرجس نبيل — أخصائي طب الأسنان التجميلي
+          </span>
           <h1 class="hero__title">ابتسامتك تستحق رعاية دقيقة</h1>
           <p class="hero__desc">
-            د. جرجس نبيل — أخصائي طب الأسنان التجميلي بخبرة تتجاوز ١٢ عاماً. نقدّم خطة علاج واضحة
+            بخبرة تتجاوز ١٢ عاماً في طب وتجميل الأسنان، نقدّم خطة علاج واضحة
             بالتكلفة والمدة منذ الزيارة الأولى، بأحدث التقنيات في قلب مصر الجديدة.
           </p>
           <div class="hero__actions">
@@ -163,12 +204,21 @@
 
         <div class="hero__media">
           <img
-            src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1400&q=80"
-            alt="عيادة سمايل كلينيك لطب الأسنان بمصر الجديدة"
-            width="1400"
-            height="1100"
+            src="assets/images/photo-1612349317150-e413f6a5b16d.jpg"
+            alt="د. جرجس نبيل، أخصائي طب الأسنان التجميلي بعيادة سمايل كلينيك"
+            width="900"
+            height="600"
           />
-      
+          <div class="hero__badge">
+            <div class="hero__badge-stars" aria-hidden="true">
+              <svg class="icon"><use href="#icon-star"></use></svg>
+              <svg class="icon"><use href="#icon-star"></use></svg>
+              <svg class="icon"><use href="#icon-star"></use></svg>
+              <svg class="icon"><use href="#icon-star"></use></svg>
+              <svg class="icon"><use href="#icon-star"></use></svg>
+            </div>
+            <p class="hero__badge-text"><strong>تقييم ٥ نجوم</strong> من مرضى العيادة</p>
+          </div>
         </div>
       </div>
     </section>
@@ -188,10 +238,17 @@
               src="assets/images/photo-1612349317150-e413f6a5b16d.jpg"
               alt="د. جرجس نبيل داخل عيادة سمايل كلينيك"
               loading="lazy"
-              width="1200"
-              height="1000"
+              width="900"
+              height="600"
             />
-          
+            <img
+              class="about__media-secondary"
+              src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=700&q=80"
+              alt="أحدث الأجهزة والتقنيات داخل عيادة سمايل كلينيك"
+              loading="lazy"
+              width="700"
+              height="525"
+            />
           </div>
           <div>
             <h3 class="about__heading">خبرة تتجاوز ١٢ عاماً في طب الأسنان</h3>
@@ -542,7 +599,10 @@
 
           <div class="why-showcase__center">
             <div class="why-badge">
-              <img src="assets/images/ssss.png" alt="">
+              <img src="assets/images/ssss.png" alt=""
+            width="211"
+            height="258"
+          />
             </div>
           </div>
 
@@ -729,7 +789,10 @@
               src="assets/images/imagesss.jpg"
               alt="منطقة الاستقبال"
               loading="lazy"
-            />
+            /
+            width="447"
+            height="447"
+          />
             <span class="gallery-item__caption">
               <span class="gallery-item__title">منطقة الاستقبال</span>
               <span class="gallery-item__sub">أجواء مريحة وهادئة</span>
@@ -850,7 +913,10 @@
                     src="assets/images/4.webp"
                     alt="بعد — هوليود سمايل"
                     loading="lazy"
-                  />
+                  /
+            width="1500"
+            height="900"
+          />
                   <span class="compare-slider__tag compare-slider__tag--after">بعد</span>
                 </div>
                 <div class="compare-slider__layer compare-slider__layer--before">
@@ -858,7 +924,10 @@
                     src="assets/images/4-1.webp"
                     alt="قبل — هوليود سمايل"
                     loading="lazy"
-                  />
+                  /
+            width="1500"
+            height="900"
+          />
                   <span class="compare-slider__tag compare-slider__tag--before">قبل</span>
                 </div>
                 <div class="compare-slider__handle" aria-hidden="true">
@@ -900,7 +969,10 @@
                     src="assets/images/A3-1-1536x916-1.webp"
                     alt="بعد — هوليود سمايل"
                     loading="lazy"
-                  />
+                  /
+            width="1500"
+            height="900"
+          />
                   <span class="compare-slider__tag compare-slider__tag--after">بعد</span>
                 </div>
                 <div class="compare-slider__layer compare-slider__layer--before">
@@ -908,7 +980,10 @@
                     src="assets/images/3.webp"
                     alt="قبل — هوليود سمايل"
                     loading="lazy"
-                  />
+                  /
+            width="1500"
+            height="900"
+          />
                   <span class="compare-slider__tag compare-slider__tag--before">قبل</span>
                 </div>
                 <div class="compare-slider__handle" aria-hidden="true">
@@ -924,7 +999,7 @@
                 />
               </div>
               <div class="compare-card__body">
-                <h3 class="compare-card__title">تحول مذهل</h3>
+                <h3 class="compare-card__title">ابتسامة جديدة تمامًا</h3>
                 <p class="compare-card__service">هوليود سمايل — ٨ قشور</p>
                 <dl class="compare-card__stats">
                   <div>
@@ -951,7 +1026,10 @@
                     src="assets/images/A3-1-1536x916-1 (1).webp"
                     alt="بعد — تبييض بالليزر"
                     loading="lazy"
-                  />
+                  /
+            width="1536"
+            height="916"
+          />
                   <span class="compare-slider__tag compare-slider__tag--after">بعد</span>
                 </div>
                 <div class="compare-slider__layer compare-slider__layer--before">
@@ -959,7 +1037,10 @@
                     src="assets/images/B3-1536x916-1.webp"
                     alt="قبل — تبييض بالليزر"
                     loading="lazy"
-                  />
+                  /
+            width="1536"
+            height="916"
+          />
                   <span class="compare-slider__tag compare-slider__tag--before">قبل</span>
                 </div>
                 <div class="compare-slider__handle" aria-hidden="true">
@@ -1000,7 +1081,10 @@
                     src="assets/images/2.webp"
                     alt="بعد — تبييض بالليزر"
                     loading="lazy"
-                  />
+                  /
+            width="1500"
+            height="900"
+          />
                   <span class="compare-slider__tag compare-slider__tag--after">بعد</span>
                 </div>
                 <div class="compare-slider__layer compare-slider__layer--before">
@@ -1008,7 +1092,10 @@
                     src="assets/images/2-1.webp"
                     alt="قبل — تبييض بالليزر"
                     loading="lazy"
-                  />
+                  /
+            width="1500"
+            height="900"
+          />
                   <span class="compare-slider__tag compare-slider__tag--before">قبل</span>
                 </div>
                 <div class="compare-slider__handle" aria-hidden="true">
@@ -1024,7 +1111,7 @@
                 />
               </div>
               <div class="compare-card__body">
-                <h3 class="compare-card__title">بياض ناصع</h3>
+                <h3 class="compare-card__title">إشراقة أكثر وضوحًا</h3>
                 <p class="compare-card__service">تبييض بالليزر</p>
                 <dl class="compare-card__stats">
                   <div>
@@ -1050,7 +1137,10 @@
                     src="assets/images/IMG_4774.webp"
                     alt="بعد — زراعة الأسنان"
                     loading="lazy"
-                  />
+                  /
+            width="1000"
+            height="666"
+          />
                   <span class="compare-slider__tag compare-slider__tag--after">بعد</span>
                 </div>
                 <div class="compare-slider__layer compare-slider__layer--before">
@@ -1058,7 +1148,10 @@
                     src="assets/images/e4a308f4-e593-4024-bbdc-bfaa41c2117d.webp"
                     alt="قبل — زراعة الأسنان"
                     loading="lazy"
-                  />
+                  /
+            width="1000"
+            height="666"
+          />
                   <span class="compare-slider__tag compare-slider__tag--before">قبل</span>
                 </div>
                 <div class="compare-slider__handle" aria-hidden="true">
@@ -1100,7 +1193,10 @@
                     src="assets/images/Screenshot 2026-08-22 225615.png"
                     alt="بعد — زراعة الأسنان"
                     loading="lazy"
-                  />
+                  /
+            width="307"
+            height="155"
+          />
                   <span class="compare-slider__tag compare-slider__tag--after">بعد</span>
                 </div>
                 <div class="compare-slider__layer compare-slider__layer--before">
@@ -1108,7 +1204,10 @@
                     src="assets/images/Screenshot 2026-08-22 225603.png"
                     alt="قبل — زراعة الأسنان"
                     loading="lazy"
-                  />
+                  /
+            width="324"
+            height="165"
+          />
                   <span class="compare-slider__tag compare-slider__tag--before">قبل</span>
                 </div>
                 <div class="compare-slider__handle" aria-hidden="true">
@@ -1124,7 +1223,7 @@
                 />
               </div>
               <div class="compare-card__body">
-                <h3 class="compare-card__title">ابتسامة كاملة</h3>
+                <h3 class="compare-card__title">ثقة كاملة في الابتسامة</h3>
                 <p class="compare-card__service">زراعة الأسنان</p>
                 <dl class="compare-card__stats">
                   <div>
@@ -1159,7 +1258,7 @@
         </div>
 
         <div class="pricing-grid">
-          <div class="card pricing-card">
+          <div id="hollywood-smile" class="card pricing-card">
             <h3 class="pricing-card__name">هوليود سمايل</h3>
             <p class="pricing-card__sub">قشرة بورسلين عالية الجودة</p>
             <div class="pricing-card__price-row">
@@ -1479,7 +1578,10 @@
                 src="assets/images/images.jpg"
                 alt="١٠ عادات يومية تحافظ على أسنانك وتمنع تسوسها"
                 loading="lazy"
-              />
+              /
+            width="192"
+            height="128"
+          />
             </div>
             <div class="post__body">
               <span class="post__cat">نصائح طبية</span>
@@ -1508,7 +1610,10 @@
                 src="assets/images/tbl_articles_article_70_345a95b9770-bc92-40f8-b292-df17e24a864b.jpg"
                 alt="تبييض الأسنان بالليزر مقابل التبييض المنزلي: أيهما أفضل؟"
                 loading="lazy"
-              />
+              /
+            width="900"
+            height="500"
+          />
             </div>
             <div class="post__body">
               <span class="post__cat">تبييض الأسنان</span>
@@ -1537,7 +1642,10 @@
                 src="assets/images/2-2-1300x676.webp"
                 alt="متى يبدأ طفلك بزيارة طبيب الأسنان؟ دليل الآباء الكامل"
                 loading="lazy"
-              />
+              /
+            width="1300"
+            height="676"
+          />
             </div>
             <div class="post__body">
               <span class="post__cat">صحة الأطفال</span>
@@ -1568,7 +1676,10 @@
                 src="assets/images/images (1).jpg"
                 alt="ألم الأسنان المفاجئ: أسبابه وكيف تتعامل معه فوراً"
                 loading="lazy"
-              />
+              /
+            width="255"
+            height="198"
+          />
             </div>
             <div class="post__body">
               <span class="post__cat">علاج الألم</span>
@@ -1804,7 +1915,7 @@
                 </button>
                 <a
                   class="btn btn--outline btn--full"
-                  href="https://wa.me/201068300432"
+                  href="https://wa.me/201068300432?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%85%D9%88%D8%B9%D8%AF%20%D9%81%D9%8A%20%D8%B3%D9%85%D8%A7%D9%8A%D9%84%20%D9%83%D9%84%D9%8A%D9%86%D9%8A%D9%83"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -1861,7 +1972,6 @@
                   <span>
                     <strong class="contact-info__label">مواعيد العمل</strong>
                     <span class="contact-info__value contact-info__value--block">السبت – الخميس: ١٢ ظهراً – ٩ مساءً</span>
-                    <span class="contact-info__value contact-info__value--block">الأحد: ١٢ ظهراً – ٩ مساءً</span>
                     <span class="contact-info__value contact-info__value--block">الجمعة: مغلق</span>
                   </span>
                 </li>
@@ -1939,10 +2049,6 @@
           <li>
             <svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg>
             السبت – الخميس: ١٢ ظهراً – ٩ مساءً
-          </li>
-          <li>
-            <svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg>
-            الأحد: ١٢ ظهراً – ٩ مساءً
           </li>
           <li>
             <svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg>
