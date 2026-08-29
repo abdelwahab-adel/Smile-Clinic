@@ -35,7 +35,8 @@
 @media (min-width: 768px) {
   .services-grid,
   .blog-grid,
-  .footer-grid {
+  .footer-grid,
+  .prep-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -57,9 +58,10 @@
 }
 
 /* --------------------------------------------------------------------------
-   ≥ 1024px — desktop
+   ≥ 1200px — full desktop nav has enough room to fit every link on one
+   line without wrapping (tested: 8 links wrap awkwardly at 1024–1150px)
    -------------------------------------------------------------------------- */
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .site-header__bar {
     height: 5rem;
   }
@@ -79,7 +81,12 @@
   .site-header__mobile-nav {
     display: none !important;
   }
+}
 
+/* --------------------------------------------------------------------------
+   ≥ 1024px — desktop
+   -------------------------------------------------------------------------- */
+@media (min-width: 1024px) {
   .hero__grid {
     grid-template-columns: repeat(2, 1fr);
     padding-block: 6rem;
@@ -102,7 +109,8 @@
   }
 
   .services-grid,
-  .blog-grid {
+  .blog-grid,
+  .prep-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 

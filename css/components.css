@@ -168,6 +168,7 @@
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--color-muted-foreground);
+  white-space: nowrap;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
@@ -629,6 +630,46 @@
 
 .service-card__link:hover {
   color: var(--color-primary);
+}
+
+/* --------------------------------------------------------------------------
+   Before your first visit — practical prep checklist
+   -------------------------------------------------------------------------- */
+.prep-grid {
+  margin-top: 3rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.prep-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+.prep-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--radius-md);
+  background-color: var(--color-accent-soft);
+  color: var(--color-accent);
+}
+
+.prep-card__title {
+  margin-top: 1.25rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.prep-card__desc {
+  margin-top: 0.5rem;
+  flex: 1;
+  font-size: 0.875rem;
+  line-height: 1.75rem;
+  color: var(--color-muted-foreground);
 }
 
 .tech-section {
@@ -1956,6 +1997,10 @@
 }
 
 .floating-actions__top {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  z-index: 40;
   display: none;
   align-items: center;
   justify-content: center;
