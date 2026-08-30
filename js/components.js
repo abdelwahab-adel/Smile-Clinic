@@ -372,6 +372,80 @@ export function initTestimonialsCarousel() {
 }
 
 /* --------------------------------------------------------------------------
+   Process stepper — auto-advancing steps with a progress bar and a
+   crossfading image on the side (click a step to jump to it directly).
+   -------------------------------------------------------------------------- */
+export function initProcessStepper() {
+  const root = document.querySelector("[data-process-stepper]");
+  if (!root) return;
+
+  const steps = Array.from(root.querySelectorAll(".process-step"));
+  const images = Array.from(root.querySelectorAll(".process-media__image"));
+  const badge = root.querySelector("[data-process-badge]");
+  if (!steps.length) return;
+
+  const STEP_LABELS = ["الخطوة ٠١", "الخطوة ٠٢", "الخطوة ٠٣", "الخطوة ٠٤"];
+  const DURATION = 4500;
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  let current = 0;
+  let timer = null;
+
+  const setActive = (index) => {
+    current = index;
+
+    steps.forEach((step, i) => {
+      const trigger = step.querySelector(".process-step__trigger");
+      const bar = step.querySelector(".process-step__progress-bar");
+      if (!trigger) return;
+
+      if (i === index) {
+        trigger.setAttribute("aria-current", "step");
+      } else {
+        trigger.removeAttribute("aria-current");
+      }
+
+      if (bar) {
+        bar.style.transition = "none";
+        bar.style.width = "0%";
+      }
+    });
+
+    images.forEach((img, i) => img.classList.toggle("is-visible", i === index));
+    if (badge) badge.textContent = STEP_LABELS[index] || STEP_LABELS[0];
+
+    if (!prefersReducedMotion) {
+      const activeBar = steps[index]?.querySelector(".process-step__progress-bar");
+      if (activeBar) {
+        // Force a reflow so the width reset above is committed before the
+        // transition to 100% starts, otherwise the browser coalesces both
+        // style changes into one and the bar jumps instead of animating.
+        void activeBar.offsetWidth;
+        activeBar.style.transition = `width ${DURATION}ms linear`;
+        activeBar.style.width = "100%";
+      }
+    }
+  };
+
+  const goTo = (index) => {
+    clearTimeout(timer);
+    setActive(index);
+    if (!prefersReducedMotion) {
+      timer = setTimeout(() => goTo((index + 1) % steps.length), DURATION);
+    }
+  };
+
+  steps.forEach((step, i) => {
+    const trigger = step.querySelector(".process-step__trigger");
+    trigger?.addEventListener("click", () => {
+      if (i !== current) goTo(i);
+    });
+  });
+
+  goTo(0);
+}
+
+/* --------------------------------------------------------------------------
    Article modal — click a blog post card to read the full article
    -------------------------------------------------------------------------- */
 export function initArticleModal() {

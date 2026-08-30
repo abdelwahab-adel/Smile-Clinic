@@ -14,6 +14,7 @@ import {
   initCompareFilters,
   initArticleModal,
   initTestimonialsCarousel,
+  initProcessStepper,
 } from "./components.js";
 import { initBookingForm } from "./pages/home.js";
 
@@ -26,6 +27,7 @@ function initApp() {
   initCompareFilters();
   initArticleModal();
   initTestimonialsCarousel();
+  initProcessStepper();
   initBookingForm();
 }
 

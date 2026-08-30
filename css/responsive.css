@@ -16,6 +16,14 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .care-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tech-showcase-media {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .form-row {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -49,6 +57,10 @@
   }
 
   .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tech-showcase-features {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -104,6 +116,10 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .care-layout {
+    grid-template-columns: 1fr 1.1fr;
+  }
+
   .section-heading__title {
     font-size: 2.25rem;
   }
@@ -127,6 +143,10 @@
   }
 
   .tech-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .tech-showcase-features {
     grid-template-columns: repeat(3, 1fr);
   }
 
