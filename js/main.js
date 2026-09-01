@@ -15,6 +15,7 @@ import {
   initArticleModal,
   initTestimonialsCarousel,
   initProcessStepper,
+  initScrollReveal,
 } from "./components.js";
 import { initBookingForm } from "./pages/home.js";
 
@@ -29,6 +30,7 @@ function initApp() {
   initTestimonialsCarousel();
   initProcessStepper();
   initBookingForm();
+  initScrollReveal();
 }
 
 if (document.readyState === "loading") {

@@ -15,16 +15,78 @@
    2. Design tokens — colors, radii, shadows, fonts
    -------------------------------------------------------------------------- */
 :root {
-  --radius: 0.75rem;
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
+  /* Radius scale — tuned down from the previous system: premium medical
+     sites read as considered, not "bubbly". Nothing above 20px except the
+     few intentionally pill-shaped controls (buttons, badges, avatars). */
+  --radius: 0.625rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+  --radius-3xl: 1.375rem;
+  --radius-4xl: 1.5rem;
 
-  --color-background: oklch(1 0 0);
+  /* -----------------------------------------------------------------------
+     Color system — Luxury medical palette (deep teal-charcoal + warm gold)
+     Background and border lean warm (cream-tinted) rather than cool grey,
+     which is what separates this from a generic "clean SaaS" medical site.
+     ----------------------------------------------------------------------- */
+  --color-background: #fbfaf7;
+  --color-foreground: #20282b;
+  --color-card: #ffffff;
+  --color-card-foreground: #20282b;
+
+  /* Deepest teal-charcoal — solid dark surfaces (footer, WhatsApp label) */
+  --color-primary: #173f42;
+  --color-primary-foreground: #fbfaf7;
+
+  /* Warm cream — hover/active chips, quiet section fills */
+  --color-secondary: #f4f0e8;
+  --color-secondary-foreground: #20282b;
+
+  --color-muted: #f4f0e8;
+  --color-muted-foreground: #607276;
+
+  /* Primary teal — the main interactive color: links, icons, CTAs */
+  --color-accent: #245b5e;
+  --color-accent-foreground: #ffffff;
+  --color-accent-soft: #e5eeed;
+
+  /* Warm gold — luxury accent, used sparingly (badges, dividers, ratings) */
+  --color-gold: #b99a6b;
+  --color-gold-foreground: #40331f;
+  --color-gold-soft: #f4f0e8;
+
+  --color-destructive: oklch(0.577 0.245 27.325);
+  --color-destructive-foreground: oklch(0.984 0.003 247.858);
+
+  --color-whatsapp: #25d366;
+  --color-whatsapp-hover: #1fb955;
+  --color-whatsapp-foreground: var(--color-primary);
+
+  --color-border: #e5e0d7;
+  --color-input: #e5e0d7;
+  --color-ring: #245b5e;
+
+  --color-surface: #ffffff;
+  --color-surface-soft: #f4f0e8;
+
+  /* Shadows — soft and shallow; tinted with the brand teal instead of pure
+     black so they read as depth, not as a drop-shadow effect. */
+  --shadow-card: 0 1px 2px rgba(23, 63, 66, 0.04), 0 8px 20px -8px rgba(23, 63, 66, 0.08);
+  --shadow-hover: 0 4px 10px rgba(23, 63, 66, 0.05), 0 16px 32px -12px rgba(23, 63, 66, 0.12);
+  --shadow-soft: 0 10px 30px rgba(23, 63, 66, 0.06);
+
+  --font-display: "Cairo", system-ui, sans-serif;
+  --font-body: "Tajawal", system-ui, sans-serif;
+
+  --container-max: 80rem;
+  --container-padding: 1.25rem;
+
+
+
+    --color-background: oklch(1 0 0);
   --color-foreground: oklch(0.24 0.035 250);
   --color-card: oklch(1 0 0);
   --color-card-foreground: oklch(0.24 0.035 250);
@@ -59,11 +121,6 @@
   --shadow-hover: 0 4px 8px oklch(0.33 0.075 252 / 0.06), 0 22px 48px -10px oklch(0.33 0.075 252 / 0.14);
   --shadow-soft: 0 20px 60px -20px oklch(0.33 0.075 252 / 0.18);
 
-  --font-display: "Cairo", system-ui, sans-serif;
-  --font-body: "Tajawal", system-ui, sans-serif;
-
-  --container-max: 80rem;
-  --container-padding: 1.25rem;
 }
 
 /* --------------------------------------------------------------------------
@@ -89,7 +146,7 @@ body {
   color: var(--color-foreground);
   font-family: var(--font-body);
   font-size: 1rem;
-  line-height: 1.55;
+  line-height: 1.68;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
@@ -164,7 +221,7 @@ p {
 }
 
 .eyebrow {
-  display: none;
+  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   border-radius: 999px;
@@ -257,7 +314,7 @@ main {
 
 .section-heading__title {
   margin-top: 1rem;
-  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 1.6vw + 1rem, 2.25rem);
   font-weight: 700;
   color: var(--color-foreground);
 }
@@ -341,4 +398,17 @@ section[id],
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
   }
+}
+
+/* Scroll reveal — class is only ever added by JS (see initScrollReveal),
+   so content stays fully visible if scripting is unavailable. */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-revealed {
+  opacity: 1;
+  transform: none;
 }

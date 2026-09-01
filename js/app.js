@@ -742,6 +742,40 @@ function initArticleModal() {
   });
 }
 
+/* --------------------------------------------------------------------------
+   Scroll reveal — a light one-time fade/slide-in as sections enter the
+   viewport. Falls back to fully visible content if JavaScript never runs
+   (the hidden state is only ever applied here, never in markup/CSS), and is
+   skipped entirely for people who prefer reduced motion.
+   -------------------------------------------------------------------------- */
+function initScrollReveal() {
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (prefersReducedMotion) return;
+
+  const targets = document.querySelectorAll(
+    ".section-heading, .card, .journey-step, .timeline-item, .tech-feature, .care-item, .process-layout, .hero__media",
+  );
+  if (!targets.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-revealed");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { rootMargin: "0px 0px -8% 0px", threshold: 0.1 },
+  );
+
+  targets.forEach((el, index) => {
+    el.classList.add("reveal");
+    el.style.transitionDelay = `${Math.min(index % 4, 3) * 60}ms`;
+    observer.observe(el);
+  });
+}
+
 /**
  * pages/home.js
  * Homepage-specific behavior: the appointment booking form.
@@ -875,6 +909,7 @@ function initApp() {
   initTestimonialsCarousel();
   initProcessStepper();
   initBookingForm();
+  initScrollReveal();
 }
 
 if (document.readyState === "loading") {

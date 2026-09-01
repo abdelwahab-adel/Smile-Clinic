@@ -56,7 +56,7 @@
 .btn--outline {
   background-color: var(--color-background);
   border-color: var(--color-input);
-  box-shadow: 0 1px 2px oklch(0.33 0.075 252 / 0.05);
+  box-shadow: 0 1px 2px rgba(23, 63, 66, 0.05);
 }
 
 .btn--outline:hover {
@@ -67,7 +67,7 @@
 .btn--whatsapp {
   background-color: var(--color-whatsapp);
   color: var(--color-whatsapp-foreground);
-  box-shadow: 0 1px 2px oklch(0.33 0.075 252 / 0.05);
+  box-shadow: 0 1px 2px rgba(23, 63, 66, 0.05);
 }
 
 .btn--whatsapp:hover {
@@ -107,7 +107,7 @@
 
 .site-header.is-scrolled {
   border-color: var(--color-border);
-  box-shadow: 0 1px 2px oklch(0.33 0.075 252 / 0.05);
+  box-shadow: 0 1px 2px rgba(23, 63, 66, 0.05);
 }
 
 .site-header__bar {
@@ -288,8 +288,8 @@
 
 .hero__title {
   margin-top: 1.25rem;
-  font-size: 1.875rem;
-  line-height: 1.2;
+  font-size: clamp(2rem, 4vw + 1rem, 3.75rem);
+  line-height: 1.15;
   letter-spacing: -0.02em;
   font-weight: 700;
 }
@@ -341,7 +341,7 @@
   height: 100%;
   object-fit: cover;
   border-radius: var(--radius-2xl);
-  border: 1px solid var(--color-border);
+  border: 1px solid color-mix(in oklab, var(--color-primary) 12%, var(--color-border));
   box-shadow: var(--shadow-soft);
 }
 
@@ -364,7 +364,7 @@
 .hero__badge-stars {
   display: flex;
   gap: 0.125rem;
-  color: #f5b400;
+  color: var(--color-gold);
   flex-shrink: 0;
 }
 
@@ -569,10 +569,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: var(--radius-md);
-  background-color: var(--color-accent-soft);
+  width: 2.25rem;
+  height: 2.25rem;
   color: var(--color-accent);
 }
 
@@ -635,38 +633,47 @@
 /* --------------------------------------------------------------------------
    Before your first visit — practical prep checklist
    -------------------------------------------------------------------------- */
+/* Editorial checklist — deliberately not another card grid: the services,
+   pricing and complete-care sections already use bordered cards, so this
+   one reads as a simple divided list instead (icon + text, thin rule
+   between rows) for real visual variety down the page. */
 .prep-grid {
   margin-top: 3rem;
   display: grid;
-  gap: 1.5rem;
+  border-top: 1px solid var(--color-border);
 }
 
 .prep-card {
   display: flex;
-  flex-direction: column;
-  padding: 1.5rem;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding-block: 1.75rem;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .prep-card__icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: var(--radius-md);
-  background-color: var(--color-accent-soft);
+  width: 2.25rem;
+  height: 2.25rem;
+  flex-shrink: 0;
   color: var(--color-accent);
 }
 
+.prep-card__body {
+  flex: 1;
+  min-width: 0;
+}
+
 .prep-card__title {
-  margin-top: 1.25rem;
-  font-size: 1.125rem;
+  margin-top: 0;
+  font-size: 1.0625rem;
   font-weight: 600;
 }
 
 .prep-card__desc {
-  margin-top: 0.5rem;
-  flex: 1;
+  margin-top: 0.375rem;
   font-size: 0.875rem;
   line-height: 1.75rem;
   color: var(--color-muted-foreground);
@@ -824,7 +831,7 @@
   margin-top: 0.5rem;
   font-family: var(--font-display);
   font-size: 1.75rem;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--color-primary);
   line-height: 1.2;
 }
@@ -928,9 +935,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-}
-
-.journey-step__badge {
+}.journey-step__badge {
   position: relative;
   z-index: 1;
   width: 4rem;
@@ -978,6 +983,50 @@
   color: var(--color-muted-foreground);
 }
 
+/* Vertical timeline below 1024px: badge + connecting line on the trailing
+   (right, in RTL) side, content flowing to its start. Above 1024px this
+   reverts to the centered column + horizontal connector defined above. */
+@media (max-width: 1023.98px) {
+  .journey-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .journey-step {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: start;
+    gap: 1.25rem;
+    padding-bottom: 2.25rem;
+  }
+
+  .journey-step::before {
+    content: "";
+    position: absolute;
+    top: 4rem;
+    bottom: 0;
+    inset-inline-start: 1.9375rem;
+    width: 2px;
+    background-color: var(--color-border);
+  }
+
+  .journey-step:last-child::before {
+    display: none;
+  }
+
+  .journey-step:last-child {
+    padding-bottom: 0;
+  }
+
+  .journey-step__title {
+    margin-top: 0;
+  }
+
+  .journey-step__desc {
+    max-width: none;
+  }
+}
+
 /* --------------------------------------------------------------------------
    Gallery
    -------------------------------------------------------------------------- */
@@ -998,7 +1047,7 @@
 
 .gallery-item img {
   width: 100%;
-  height: 15rem;
+  height: 14rem;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
@@ -1313,6 +1362,16 @@
    -------------------------------------------------------------------------- */
 .testimonials-carousel {
   margin-top: 3.5rem;
+  border-radius: var(--radius-2xl);
+  /* background-color: var(--color-surface-soft); */
+  border: 1px solid var(--color-border);
+  padding: 2rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .testimonials-carousel {
+    padding: 3rem;
+  }
 }
 
 .testimonials-viewport {
@@ -1325,17 +1384,25 @@
   will-change: transform;
 }
 
+/* Featured "magazine" quote — one large testimonial at a time (never a row
+   of matching cards): a compact byline block (stars, avatar, name) beside
+   a big quote, stacked on mobile, side-by-side from 1024px up. */
 .testimonial-card {
   flex: 0 0 100%;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-areas:
+    "stars"
+    "quote"
+    "footer";
+  row-gap: 1.25rem;
+  padding-block: 0.5rem;
 }
 
 .testimonial-card__stars {
+  grid-area: stars;
   display: flex;
   gap: 0.25rem;
-  color: var(--color-accent);
+  color: var(--color-gold);
 }
 
 .testimonial-card__stars .icon {
@@ -1343,17 +1410,29 @@
 }
 
 .testimonial-card__quote {
-  margin-top: 1rem;
-  flex: 1;
-  font-size: 0.875rem;
-  line-height: 2rem;
-  color: var(--color-muted-foreground);
+  grid-area: quote;
+  position: relative;
+  font-family: var(--font-display);
+  font-size: clamp(1.1875rem, 0.9vw + 1rem, 1.625rem);
+  font-weight: 600;
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+  color: var(--color-foreground);
+}
+
+.testimonial-card__quote::before {
+  content: "\201C";
+  display: block;
+  margin-bottom: 0.125rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 3.75rem;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--color-gold);
 }
 
 .testimonial-card__footer {
-  margin-top: 1.25rem;
-  border-block-start: 1px solid var(--color-border);
-  padding-top: 1rem;
+  grid-area: footer;
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -1371,6 +1450,27 @@
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 0.9375rem;
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .testimonial-card {
+    grid-template-columns: 15rem 1fr;
+    grid-template-areas:
+      "stars  quote"
+      "footer quote";
+    column-gap: 3.5rem;
+    row-gap: 1.5rem;
+    align-items: start;
+  }
+
+  .testimonial-card__footer {
+    align-self: end;
+  }
+
+  .testimonial-card__quote {
+    font-size: clamp(1.375rem, 1.1vw + 1rem, 1.875rem);
+  }
 }
 
 .testimonial-card__meta {
@@ -1407,7 +1507,7 @@
   border: 1px solid var(--color-border);
   background-color: var(--color-card);
   color: var(--color-foreground);
-  box-shadow: 0 1px 2px oklch(0.33 0.075 252 / 0.05);
+  box-shadow: 0 1px 2px rgba(23, 63, 66, 0.05);
   transition: background-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
 }
 
@@ -2010,7 +2110,7 @@
   border: 1px solid var(--color-border);
   background-color: var(--color-card);
   color: var(--color-foreground);
-  box-shadow: 0 1px 2px oklch(0.33 0.075 252 / 0.05);
+  box-shadow: 0 1px 2px rgba(23, 63, 66, 0.05);
   transition: background-color 0.2s ease;
 }
 
@@ -2186,7 +2286,7 @@
   padding-block: 1.25rem;
   text-align: center;
   font-size: 0.75rem;
-  color: color-mix(in oklab, var(--color-primary-foreground) 60%, transparent);
+  color: color-mix(in oklab, var(--color-primary-foreground) 70%, transparent);
 }
 
 /* --------------------------------------------------------------------------
@@ -2284,6 +2384,9 @@
   color: var(--color-primary-foreground);
 }
 
+.eyebrow{
+  display: none;
+}
 .eyebrow--on-dark {
   background-color: color-mix(in oklab, var(--color-primary-foreground) 12%, transparent);
   color: var(--color-primary-foreground);
@@ -2296,15 +2399,9 @@
 .tech-showcase__title {
   margin-top: 1rem;
   max-width: 42rem;
-  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 1.6vw + 1rem, 2.25rem);
   font-weight: 700;
   color: var(--color-primary-foreground);
-}
-
-@media (min-width: 1024px) {
-  .tech-showcase__title {
-    font-size: 2.25rem;
-  }
 }
 
 .tech-showcase__desc {
@@ -2411,7 +2508,7 @@
 
 .process-step__number {
   padding-top: 0.125rem;
-  font-size: 0.9375rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--color-muted-foreground);
   transition: color 0.2s ease;
@@ -2528,3 +2625,10 @@
     order: 2;
   }
 }
+
+@media (max-width: 1024px) {
+.about__media img {
+  display: none;
+}
+}
+
