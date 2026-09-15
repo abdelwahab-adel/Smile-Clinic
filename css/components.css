@@ -337,6 +337,7 @@
    ========================================================================== */
 
 .hero__content {
+
   max-width: 650px;
   text-align: right;
 }
@@ -879,7 +880,7 @@
   }
 
   .hero__content {
-    order: 1;
+    order: 5;
 
     max-width: 780px;
   }
@@ -932,9 +933,7 @@
   .hero__title {
     margin-top: 1rem;
 
-    font-size:
-      clamp(2.3rem, 10vw, 3rem);
-
+    
     line-height: 1.2;
   }
 

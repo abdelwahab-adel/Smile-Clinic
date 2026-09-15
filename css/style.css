@@ -409,6 +409,7 @@ section[id],
 }
 
 .reveal.is-revealed {
+  order: 1;
       margin-top: 10px;
   opacity: 1;
   transform: none;
