@@ -3290,7 +3290,7 @@
 
 @media (max-width: 1024px) {
 .about__media img {
-  display: none;
+  /* display: none; */
 }
 }
 
