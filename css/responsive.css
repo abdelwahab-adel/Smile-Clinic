@@ -8,9 +8,9 @@
    ≥ 640px — small tablets
    -------------------------------------------------------------------------- */
 @media (min-width: 640px) {
-  .hero__stats {
+  /* .hero__stats {
     grid-template-columns: repeat(4, 1fr);
-  }
+  } */
 
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -91,10 +91,10 @@
    ≥ 1024px — desktop
    -------------------------------------------------------------------------- */
 @media (min-width: 1024px) {
-  .hero__grid {
+  /* .hero__grid {
     grid-template-columns: repeat(2, 1fr);
     padding-block: 6rem;
-  }
+  } */
 
 
   .section {
