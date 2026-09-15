@@ -715,6 +715,7 @@
 
 .hero__quote span {
   font-weight: 400;
+  color: var(--color-primary);
 }
 
 .hero__quote strong {
