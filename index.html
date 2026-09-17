@@ -16,9 +16,9 @@
     content="احجز استشارتك المجانية مع د. جرجس نبيل واحصل على خطة علاج واضحة بأسعار شفافة."
   />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/images/photo-1612349317150-e413f6a5b16d.jpg" />
+  <meta property="og:image" content="assets/images/doc.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="assets/images/photo-1612349317150-e413f6a5b16d.jpg" />
+  <meta name="twitter:image" content="assets/images/doc.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,7 +38,7 @@
     "@context": "https://schema.org",
     "@type": "Dentist",
     "name": "سمايل كلينيك",
-    "image": "assets/images/photo-1612349317150-e413f6a5b16d.jpg",
+    "image": "assets/images/doc.png",
     "telephone": "+201068300432",
     "email": "info@smileclinic-eg.com",
     "address": {
@@ -57,12 +57,23 @@
       "@type": "Physician",
       "name": "د. جرجس نبيل",
       "medicalSpecialty": "Dentistry",
-      "image": "assets/images/photo-1612349317150-e413f6a5b16d.jpg",
+      "image": "assets/images/doc.png",
       "alumniOf": {
         "@type": "CollegeOrUniversity",
         "name": "كلية طب الأسنان — جامعة عين شمس"
       }
-    }
+    },
+    "availableService": [
+      { "@type": "MedicalProcedure", "name": "زراعة الأسنان" },
+      { "@type": "MedicalProcedure", "name": "تركيبات الأسنان (بورسلين، زيركون، إيماكس)" },
+      { "@type": "MedicalProcedure", "name": "تقويم الأسنان" },
+      { "@type": "MedicalProcedure", "name": "تبييض الأسنان" },
+      { "@type": "MedicalProcedure", "name": "عدسات الأسنان" },
+      { "@type": "MedicalProcedure", "name": "حشو الأسنان (بلاتين، ليزر، عصب، وقائي)" },
+      { "@type": "MedicalProcedure", "name": "علاج الجذور" },
+      { "@type": "MedicalProcedure", "name": "علاج وتجميل اللثة بالليزر" },
+      { "@type": "MedicalProcedure", "name": "خلع الأسنان" }
+    ]
   }
   </script>
 </head>
@@ -131,7 +142,7 @@
         <a href="#home" class="site-header__link is-active" data-nav-link aria-current="true">الرئيسية</a>
         <a href="#about" class="site-header__link" data-nav-link>من نحن</a>
         <a href="#services" class="site-header__link" data-nav-link>الخدمات</a>
-        <a href="#journey" class="site-header__link" data-nav-link>رحلة العلاج</a>
+        <a href="#process" class="site-header__link" data-nav-link>رحلة العلاج</a>
         <a href="#gallery" class="site-header__link" data-nav-link>المعرض والنتائج</a>
         <a href="#pricing" class="site-header__link" data-nav-link>الأسعار</a>
         <a href="#blog" class="site-header__link" data-nav-link>المدونة</a>
@@ -163,7 +174,7 @@
         <a href="#home" class="site-header__mobile-link is-active" data-nav-link>الرئيسية</a>
         <a href="#about" class="site-header__mobile-link" data-nav-link>من نحن</a>
         <a href="#services" class="site-header__mobile-link" data-nav-link>الخدمات</a>
-        <a href="#journey" class="site-header__mobile-link" data-nav-link>رحلة العلاج</a>
+        <a href="#process" class="site-header__mobile-link" data-nav-link>رحلة العلاج</a>
         <a href="#gallery" class="site-header__mobile-link" data-nav-link>المعرض والنتائج</a>
         <a href="#pricing" class="site-header__mobile-link" data-nav-link>الأسعار</a>
         <a href="#blog" class="site-header__mobile-link" data-nav-link>المدونة</a>
@@ -349,21 +360,18 @@
 
             <ul class="credential-list">
               <li class="credential-item">
-                <!-- <svg class="credential-item__icon" aria-hidden="true"><use href="#icon-check-circle-2"></use></svg> -->
                 <span>
                   <strong class="credential-item__title">بكالوريوس طب وجراحة الأسنان — جامعة عين شمس</strong>
                   <span class="credential-item__sub">كلية طب الأسنان — القاهرة، ٢٠١٢</span>
                 </span>
               </li>
               <li class="credential-item">
-                <!-- <svg class="credential-item__icon" aria-hidden="true"><use href="#icon-check-circle-2"></use></svg> -->
                 <span>
                   <strong class="credential-item__title">دبلوم تجميل الأسنان التطبيقي — جامعة عين شمس</strong>
                   <span class="credential-item__sub">كلية طب الأسنان، القاهرة — ٢٠١٥</span>
                 </span>
               </li>
               <li class="credential-item">
-                <!-- <svg class="credential-item__icon" aria-hidden="true"><use href="#icon-check-circle-2"></use></svg> -->
                 <span>
                   <strong class="credential-item__title">دورة زراعة الأسنان — مركز ITI الدولي، هامبورغ</strong>
                   <span class="credential-item__sub">ألمانيا — ٢٠١٩ | عضو نقابة أطباء أسنان مصر</span>
@@ -418,16 +426,11 @@
       <div class="container">
         <div class="section-heading section-heading--center">
           <span class="eyebrow">خدماتنا</span>
-          <h2 class="section-heading__title">كل ما تحتاجه لابتسامة صحية</h2>
-          <p class="section-heading__desc">
-            مجموعة شاملة من خدمات طب الأسنان التجميلية والعلاجية، بخطة علاج مكتوبة وتكلفة واضحة قبل
-            البدء.
-          </p>
+          <h2 class="section-heading__title">خدمات متكاملة للعناية بأسنانك وعلاجها والحفاظ على صحتها</h2>
         </div>
 
         <div class="services-grid">
           <article id="implants" class="card service-card">
-            
             <h3 class="service-card__title">زراعة الأسنان</h3>
             <p class="service-card__desc">
               حلول دائمة تدوم مدى الحياة بزراعة الأسنان الفورية والتقليدية من أفضل الماركات العالمية المعتمدة.
@@ -449,7 +452,6 @@
           </article>
 
           <article id="orthodontics" class="card service-card">
-           
             <h3 class="service-card__title">تقويم الأسنان</h3>
             <p class="service-card__desc">
               تقويم شفاف وتقليدي لتصحيح التوافق وتحقيق الانتظام المثالي للأسنان بتقنية Invisalign الحديثة.
@@ -471,7 +473,6 @@
           </article>
 
           <article id="whitening" class="card service-card">
-            
             <h3 class="service-card__title">تبييض الأسنان</h3>
             <p class="service-card__desc">
               تبييض فوري بتقنية الليزر والضوء الأزرق للحصول على أسنان بيضاء طبيعية تدوم لسنوات طويلة.
@@ -493,7 +494,6 @@
           </article>
 
           <article id="veneers" class="card service-card">
-            
             <h3 class="service-card__title">عدسات الأسنان</h3>
             <p class="service-card__desc">
               قشور خزفية رفيعة تغطي الأسنان بشكل طبيعي للحصول على ابتسامة مثالية دون طحن مفرط للأسنان.
@@ -515,7 +515,6 @@
           </article>
 
           <article id="root-canal" class="card service-card">
-           
             <h3 class="service-card__title">علاج الجذور</h3>
             <p class="service-card__desc">
               علاج قنوات الجذور بتقنية Rotary الرقمية بدون ألم في جلسة واحدة للحفاظ على أسنانك الطبيعية.
@@ -536,20 +535,86 @@
             </a>
           </article>
 
-          <article id="smile-design" class="card service-card">
-           
-            <h3 class="service-card__title">تجميل الابتسامة</h3>
+          <article id="crowns" class="card service-card">
+            <h3 class="service-card__title">تركيبات الأسنان</h3>
             <p class="service-card__desc">
-              تصميم رقمي للابتسامة بالذكاء الاصطناعي لتصور نتيجة علاجك قبل البدء واتخاذ قرارك بثقة كاملة.
+              تركيب الأسنان المفقودة أو التالفة بخامات البورسلين والزيركون والإيماكس، لتعويض ثابت
+              يحاكي شكل ولون أسنانك الطبيعية.
             </p>
             <dl class="service-card__stats">
               <div class="service-card__stat">
                 <dt><svg class="icon icon--sm" aria-hidden="true"><use href="#icon-clock"></use></svg>المدة</dt>
-                <dd>استشارة</dd>
+                <dd>١-٢ جلسة</dd>
               </div>
               <div class="service-card__stat">
                 <dt><svg class="icon icon--sm" aria-hidden="true"><use href="#icon-activity"></use></svg>التعافي</dt>
-                <dd>بلا تدخل</dd>
+                <dd>فوري</dd>
+              </div>
+            </dl>
+            <a href="#contact" class="service-card__link">
+              احجز استشارة
+              <svg class="icon" aria-hidden="true"><use href="#icon-arrow-left"></use></svg>
+            </a>
+          </article>
+
+          <article id="fillings" class="card service-card">
+            <h3 class="service-card__title">حشو الأسنان</h3>
+            <p class="service-card__desc">
+              علاج التسوس بأنواع حشو متعددة (بلاتين، ليزر، عصب)، بالإضافة إلى الحشو الوقائي للأسنان
+              ذات النتوءات المعرّضة للتسوس قبل تفاقم المشكلة.
+            </p>
+            <dl class="service-card__stats">
+              <div class="service-card__stat">
+                <dt><svg class="icon icon--sm" aria-hidden="true"><use href="#icon-clock"></use></svg>المدة</dt>
+                <dd>جلسة واحدة</dd>
+              </div>
+              <div class="service-card__stat">
+                <dt><svg class="icon icon--sm" aria-hidden="true"><use href="#icon-activity"></use></svg>التعافي</dt>
+                <dd>فوري</dd>
+              </div>
+            </dl>
+            <a href="#contact" class="service-card__link">
+              احجز استشارة
+              <svg class="icon" aria-hidden="true"><use href="#icon-arrow-left"></use></svg>
+            </a>
+          </article>
+
+          <article id="gum-care" class="card service-card">
+            <h3 class="service-card__title">علاج وتجميل اللثة</h3>
+            <p class="service-card__desc">
+              تجميل اللثة بالليزر لتصحيح خط الابتسامة، إلى جانب كل جراحات اللثة العلاجية والتجميلية
+              اللازمة لصحة لثة مستقرة وداعمة لأسنانك.
+            </p>
+            <dl class="service-card__stats">
+              <div class="service-card__stat">
+                <dt><svg class="icon icon--sm" aria-hidden="true"><use href="#icon-clock"></use></svg>المدة</dt>
+                <dd>١-٢ جلسة</dd>
+              </div>
+              <div class="service-card__stat">
+                <dt><svg class="icon icon--sm" aria-hidden="true"><use href="#icon-activity"></use></svg>التعافي</dt>
+                <dd>٣-٧ أيام</dd>
+              </div>
+            </dl>
+            <a href="#contact" class="service-card__link">
+              احجز استشارة
+              <svg class="icon" aria-hidden="true"><use href="#icon-arrow-left"></use></svg>
+            </a>
+          </article>
+
+          <article id="extraction" class="card service-card">
+            <h3 class="service-card__title">خلع الأسنان</h3>
+            <p class="service-card__desc">
+              خلع آمن وخالٍ من الألم للأسنان التي يتعذّر علاجها أو ترميمها، بأحدث تقنيات التخدير
+              الموضعي لراحة تامة أثناء الإجراء.
+            </p>
+            <dl class="service-card__stats">
+              <div class="service-card__stat">
+                <dt><svg class="icon icon--sm" aria-hidden="true"><use href="#icon-clock"></use></svg>المدة</dt>
+                <dd>٣٠-٤٥ دقيقة</dd>
+              </div>
+              <div class="service-card__stat">
+                <dt><svg class="icon icon--sm" aria-hidden="true"><use href="#icon-activity"></use></svg>التعافي</dt>
+                <dd>٢-٣ أيام</dd>
               </div>
             </dl>
             <a href="#contact" class="service-card__link">
@@ -898,11 +963,11 @@
           <div class="process-media">
             <img
               class="process-media__image is-visible"
-              src="assets/images/photo-1612349317150-e413f6a5b16d.jpg"
+              src="assets/images/doc.png"
               alt="د. جرجس نبيل أثناء الاستشارة والفحص الرقمي"
               loading="lazy"
-              width="900"
-              height="600"
+              width="812"
+              height="533"
             />
             <img
               class="process-media__image"
@@ -2225,7 +2290,7 @@
             <div class="map-frame">
               <iframe
                 title="موقع العيادة على الخريطة"
-                src="https://www.google.com/maps?q=Abbas%20El%20Akkad%20Nasr%20City%20Cairo&output=embed"
+                src="https://www.google.com/maps?q=Abbas%20El%20Akkad%20Heliopolis%20Cairo&output=embed"
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
               ></iframe>
@@ -2322,11 +2387,13 @@
         <h3 class="footer-heading">خدماتنا</h3>
         <ul class="footer-links">
           <li><a href="#implants">زراعة الأسنان</a></li>
-          <li><a href="#hollywood-smile">هوليود سمايل</a></li>
           <li><a href="#orthodontics">تقويم الأسنان</a></li>
           <li><a href="#whitening">تبييض الأسنان</a></li>
           <li><a href="#veneers">عدسات الأسنان</a></li>
-          <li><a href="#root-canal">علاج الجذور</a></li>
+          <li><a href="#crowns">تركيبات الأسنان</a></li>
+          <li><a href="#fillings">حشو الأسنان</a></li>
+          <li><a href="#gum-care">علاج وتجميل اللثة</a></li>
+          <li><a href="#extraction">خلع الأسنان</a></li>
         </ul>
       </div>
 

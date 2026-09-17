@@ -62,10 +62,11 @@
 }
 
 /* --------------------------------------------------------------------------
-   ≥ 1200px — full desktop nav has enough room to fit every link on one
-   line without wrapping (tested: 8 links wrap awkwardly at 1024–1150px)
+   ≥ 1024px — desktop (matches every other section's breakpoint; nav link
+   padding/gaps are trimmed in components.css so all 8 links fit on one
+   line without wrapping at this width)
    -------------------------------------------------------------------------- */
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
   .site-header__bar {
     height: 5rem;
   }
@@ -85,17 +86,6 @@
   .site-header__mobile-nav {
     display: none !important;
   }
-}
-
-/* --------------------------------------------------------------------------
-   ≥ 1024px — desktop
-   -------------------------------------------------------------------------- */
-@media (min-width: 1024px) {
-  /* .hero__grid {
-    grid-template-columns: repeat(2, 1fr);
-    padding-block: 6rem;
-  } */
-
 
   .section {
     padding-block: 6rem;

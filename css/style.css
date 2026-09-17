@@ -15,9 +15,9 @@
    2. Design tokens — colors, radii, shadows, fonts
    -------------------------------------------------------------------------- */
 :root {
-  /* Radius scale — tuned down from the previous system: premium medical
-     sites read as considered, not "bubbly". Nothing above 20px except the
-     few intentionally pill-shaped controls (buttons, badges, avatars). */
+  /* -----------------------------------------------------------------------
+     Radius scale
+     ----------------------------------------------------------------------- */
   --radius: 0.625rem;
   --radius-sm: 0.5rem;
   --radius-md: 0.625rem;
@@ -28,66 +28,11 @@
   --radius-4xl: 1.5rem;
 
   /* -----------------------------------------------------------------------
-     Color system — Luxury medical palette (deep teal-charcoal + warm gold)
-     Background and border lean warm (cream-tinted) rather than cool grey,
-     which is what separates this from a generic "clean SaaS" medical site.
+     Color system — OKLCH palette
      ----------------------------------------------------------------------- */
-  --color-background: #fbfaf7;
-  --color-foreground: #20282b;
-  --color-card: #ffffff;
-  --color-card-foreground: #20282b;
-
-  /* Deepest teal-charcoal — solid dark surfaces (footer, WhatsApp label) */
-  --color-primary: #173f42;
-  --color-primary-foreground: #fbfaf7;
-
-  /* Warm cream — hover/active chips, quiet section fills */
-  --color-secondary: #f4f0e8;
-  --color-secondary-foreground: #20282b;
-
-  --color-muted: #f4f0e8;
-  --color-muted-foreground: #607276;
-
-  /* Primary teal — the main interactive color: links, icons, CTAs */
-  --color-accent: #245b5e;
-  --color-accent-foreground: #ffffff;
-  --color-accent-soft: #e5eeed;
-
-  /* Warm gold — luxury accent, used sparingly (badges, dividers, ratings) */
-  --color-gold: #b99a6b;
-  --color-gold-foreground: #40331f;
-  --color-gold-soft: #f4f0e8;
-
-  --color-destructive: oklch(0.577 0.245 27.325);
-  --color-destructive-foreground: oklch(0.984 0.003 247.858);
-
-  --color-whatsapp: #25d366;
-  --color-whatsapp-hover: #1fb955;
-  --color-whatsapp-foreground: var(--color-primary);
-
-  --color-border: #e5e0d7;
-  --color-input: #e5e0d7;
-  --color-ring: #245b5e;
-
-  --color-surface: #ffffff;
-  --color-surface-soft: #f4f0e8;
-
-  /* Shadows — soft and shallow; tinted with the brand teal instead of pure
-     black so they read as depth, not as a drop-shadow effect. */
-  --shadow-card: 0 1px 2px rgba(23, 63, 66, 0.04), 0 8px 20px -8px rgba(23, 63, 66, 0.08);
-  --shadow-hover: 0 4px 10px rgba(23, 63, 66, 0.05), 0 16px 32px -12px rgba(23, 63, 66, 0.12);
-  --shadow-soft: 0 10px 30px rgba(23, 63, 66, 0.06);
-
-  --font-display: "Cairo", system-ui, sans-serif;
-  --font-body: "Tajawal", system-ui, sans-serif;
-
-  --container-max: 80rem;
-  --container-padding: 1.25rem;
-
-
-
-    --color-background: oklch(1 0 0);
+  --color-background: oklch(1 0 0);
   --color-foreground: oklch(0.33 0.075 252);
+
   --color-card: oklch(1 0 0);
   --color-card-foreground: oklch(0.24 0.035 250);
 
@@ -104,24 +49,67 @@
   --color-accent-foreground: oklch(0.99 0.005 220);
   --color-accent-soft: oklch(0.955 0.028 205);
 
+  /* -----------------------------------------------------------------------
+     Gold — retained for luxury accent elements
+     ----------------------------------------------------------------------- */
+  --color-gold: oklch(0.68 0.075 75);
+  --color-gold-foreground: oklch(0.3 0.045 70);
+  --color-gold-soft: oklch(0.96 0.018 80);
+
+  /* -----------------------------------------------------------------------
+     Destructive
+     ----------------------------------------------------------------------- */
   --color-destructive: oklch(0.577 0.245 27.325);
   --color-destructive-foreground: oklch(0.984 0.003 247.858);
 
+  /* -----------------------------------------------------------------------
+     WhatsApp
+     ----------------------------------------------------------------------- */
   --color-whatsapp: #25d366;
   --color-whatsapp-hover: #1fb955;
   --color-whatsapp-foreground: #fff;
 
+  /* -----------------------------------------------------------------------
+     Borders & inputs
+     ----------------------------------------------------------------------- */
   --color-border: oklch(0.918 0.012 240);
   --color-input: oklch(0.918 0.012 240);
   --color-ring: oklch(0.62 0.098 205);
 
+  /* -----------------------------------------------------------------------
+     Surfaces
+     ----------------------------------------------------------------------- */
   --color-surface: oklch(0.982 0.006 235);
+  --color-surface-soft: oklch(0.968 0.008 235);
 
-  --shadow-card: 0 1px 2px oklch(0.33 0.075 252 / 0.05), 0 10px 28px -6px oklch(0.33 0.075 252 / 0.09);
-  --shadow-hover: 0 4px 8px oklch(0.33 0.075 252 / 0.06), 0 22px 48px -10px oklch(0.33 0.075 252 / 0.14);
-  --shadow-soft: 0 20px 60px -20px oklch(0.33 0.075 252 / 0.18);
+  /* -----------------------------------------------------------------------
+     Shadows
+     ----------------------------------------------------------------------- */
+  --shadow-card:
+    0 1px 2px oklch(0.33 0.075 252 / 0.05),
+    0 10px 28px -6px oklch(0.33 0.075 252 / 0.09);
 
+  --shadow-hover:
+    0 4px 8px oklch(0.33 0.075 252 / 0.06),
+    0 22px 48px -10px oklch(0.33 0.075 252 / 0.14);
+
+  --shadow-soft:
+    0 20px 60px -20px oklch(0.33 0.075 252 / 0.18);
+
+  /* -----------------------------------------------------------------------
+     Typography
+     ----------------------------------------------------------------------- */
+  --font-display: "Cairo", system-ui, sans-serif;
+  --font-body: "Tajawal", system-ui, sans-serif;
+
+  /* -----------------------------------------------------------------------
+     Layout
+     ----------------------------------------------------------------------- */
+  --container-max: 80rem;
+  --container-padding: 1.25rem;
 }
+
+
 
 /* --------------------------------------------------------------------------
    3. Reset
@@ -206,10 +194,18 @@ button:focus-visible,
    4. Typography
    -------------------------------------------------------------------------- */
 h1,
-h2,
+h2{
+  font-family: ui-sans-serif ;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+
 h3,
 h4 {
-  font-family: var(--font-display);
+  font-family:'Tajawal';
   font-weight: 700;
   letter-spacing: -0.015em;
   line-height: 1.2;
@@ -334,6 +330,7 @@ main {
   height: 1rem;
   flex-shrink: 0;
   color: currentColor;
+  /* color: var(--color-foreground);; */
 }
 
 .icon--sm {
